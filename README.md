@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Josh Yeung — Portfolio
 
 A clean, modern, fully responsive one-page portfolio for recruiters, hiring managers, and collaborators.
@@ -41,3 +42,6 @@ A clean, modern, fully responsive one-page portfolio for recruiters, hiring mana
 
 ## License
 MIT — feel free to use and adapt. 
+=======
+# PortfolioWebsite
+>>>>>>> d5416f70e8634f4adeb04e0a98295f4834e78c8a
