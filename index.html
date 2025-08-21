@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Josh Yeung — Portfolio</title>
+    <meta name="description" content="Portfolio of Josh Yeung" />
+    <meta name="theme-color" content="#00BFFF" />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Fonts: Poppins (headings) & Inter (body) {Backup Font} -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <!-- Fonts: DM Serif Display (headings)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Fonts: Mulish (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- EmailJS (optional; configure keys in script.js or data-* attributes) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <aside class="sidebar" id="sidebar" aria-label="Site navigation">
+      <div class="sidebar-inner">
+        <a class="brand" href="#home" aria-label="Josh Yeung home">
+          <img src="assets/favicon.svg" alt="JY logo" width="40" height="40" />
+        </a>
+
+        
+
+        <div class="sidebar-social" aria-label="Social links">
+          <a class="icon-link" href="https://github.com/1110JY" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 25" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.98 0-1.32.47-2.4 1.23-3.24-.12-.3-.53-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.64.25 2.86.12 3.16.77.84 1.23 1.92 1.23 3.24 0 4.66-2.81 5.67-5.49 5.97.43.37.81 1.1.81 2.22v3.3c0 .32.21.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5v12H3.56v-12h3.38Zm.22-4.03c0 .98-.8 1.78-1.78 1.78S3.6 5.45 3.6 4.47s.8-1.78 1.78-1.78 1.78.8 1.78 1.78ZM20.44 20.5h-3.37v-6.52c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.51 1.7-2.51 3.45v6.63H9.02v-12h3.24v1.64h.05c.45-.85 1.54-1.75 3.17-1.75 3.39 0 4.02 2.24 4.02 5.15v6.96Z"/></svg>
+          </a>
+        </div>
+        
+        <!--Divider-->
+        <div class="sidebar-divider" role="separator" aria-hidden="true"></div>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li>
+              <a class="nav-link" href="#home" data-nav="home" aria-label="Home">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#about" data-nav="about" aria-label="About">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.33 0-8 2.17-8 5v2h16v-2c0-2.83-3.67-5-8-5Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#projects" data-nav="projects" aria-label="Projects">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 3H3v7h7V3Zm11 0h-7v7h7V3ZM10 14H3v7h7v-7Zm11 0h-7v7h7v-7Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#experience" data-nav="experience" aria-label="Experience">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 4h4a2 2 0 0 1 2 2h4v4H4V6h4a2 2 0 0 1 2-2Zm10 8v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6h6v1h4v-1h6Z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#cv" data-nav="cv" aria-label="CV">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 0v6h6M8 13h8M8 17h8M8 9h2"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#contact" data-nav="contact" aria-label="Contact">
+                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.5-8 5-8-5V6l8 5 8-5v2.5Z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+
+      </div>
+    </aside>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <main>
+      <!-- Hero / Intro -->
+      <section id="home" class="section hero" aria-label="Introduction">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1 class="hero-title">Josh Yeung</h1>
+            <p class="hero-tagline">Computing Graduate • Web Developer • Problem Solver</p>
+            <p class="hero-subtext">I build clean, modern web experiences with a focus on performance, accessibility, and delightful UX.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">View My Work</a>
+              <a class="btn btn-outline" href="assets/Josh_Yeung_CV.pdf" target="_blank" rel="noopener" download>Download CV</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="gradient-orb"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me -->
+      <section id="about" class="section about" aria-label="About me">
+        <div class="container about-inner">
+          <div class="about-media">
+            <img src="assets/images/headshot.svg" alt="Headshot of Josh Yeung" loading="lazy" />
+          </div>
+          <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+              I am a recent Computing graduate with a passion for building intuitive and reliable software. I enjoy turning ideas into
+              user-centered products and continuously improving my craft.
+            </p>
+            <p>
+              Outside of coding, you'll find me exploring new technologies, working on side projects, and staying active. I thrive in collaborative
+              environments where I can learn from others and contribute meaningfully.
+            </p>
+            <ul class="tags" aria-label="Tech stack">
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>HTML & CSS</li>
+              <li>Git</li>
+              <li>Python</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section projects" aria-label="Projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <img src="assets/images/project1.svg" alt="Screenshot of Project One" loading="lazy" />
+              <div class="project-body">
+                <h3>Badminton Buddy</h3>
+                <p>Badminton Stats Tracker</p>
+                <ul class="tags">
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>Vite</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener" class="link">GitHub</a>
+                </div>
+                <div class="video-embed">
+                  <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Project One Demo"
+                    loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <img src="assets/images/project2.svg" alt="Screenshot of Project Two" loading="lazy" />
+              <div class="project-body">
+                <h3>Fridge to Feast</h3>
+                <p>Recipe matcher than minmises waste and maximises flavour</p>
+                <ul class="tags">
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>PostgreSQL</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener" class="link">GitHub</a>
+                </div>
+                <div class="video-embed">
+                  <iframe
+                    src="https://www.youtube.com/embed/5NV6Rdv1a3I"
+                    title="Project Two Demo"
+                    loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <img src="assets/images/project3.svg" alt="Screenshot of Project Three" loading="lazy" />
+              <div class="project-body">
+                <h3>Campus Habit Hero</h3>
+                <p>A data visualization dashboard with interactive charts.</p>
+                <ul class="tags">
+                  <li>Vanilla JS</li>
+                  <li>D3.js</li>
+                  <li>CSS Grid</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener" class="link">GitHub</a>
+                </div>
+                <div class="video-embed">
+                  <iframe
+                    src="https://www.youtube.com/embed/aqz-KE-bpKQ"
+                    title="Project Three Demo"
+                    loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card">
+              <img src="assets/images/project4.svg" alt="Screenshot of Project Four" loading="lazy" />
+              <div class="project-body">
+                <h3>Project Four</h3>
+                <p>A mobile-first PWA with offline support and smooth UX.</p>
+                <ul class="tags">
+                  <li>PWA</li>
+                  <li>Workbox</li>
+                  <li>Interactivity</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername/project-four" target="_blank" rel="noopener" class="link">GitHub</a>
+                </div>
+                <div class="video-embed">
+                  <iframe
+                    src="https://www.youtube.com/embed/9bZkp7q19f0"
+                    title="Project Four Demo"
+                    loading="lazy"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section experience" aria-label="Experience">
+        <div class="container">
+          <h2>Experience</h2>
+          <div class="experience-list">
+            <article class="experience-item">
+              <header>
+                <h3>Team Project</h3>
+                <span class="meta">Glasgow Caledonian University • 2023 – 2024</span>
+              </header>
+              <ul>
+                <li>Designed and developed a full-stack web application.</li>
+                <li>Collaborated with a team of 5, adopting Agile methodologies.</li>
+                <li>Implemented CI/CD and automated testing to ensure quality.</li>
+              </ul>
+            </article>
+
+            <article class="experience-item">
+              <header>
+                <h3>Intern • Tech Company</h3>
+                <span class="meta">Example City • Summer 2023</span>
+              </header>
+              <ul>
+                <li>Built internal tools to streamline workflows and reporting.</li>
+                <li>Worked across frontend and backend with mentorship from senior engineers.</li>
+                <li>Improved page performance with code splitting and caching.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CV -->
+      <section id="cv" class="section cv" aria-label="Curriculum Vitae">
+        <div class="container cv-inner">
+          <div class="cv-content">
+            <h2>CV</h2>
+            <p>Want to see my full background? You can view or download my CV below.</p>
+            <div class="cv-actions">
+              <a class="btn btn-primary" href="assets/Josh_Yeung_CV.pdf" target="_blank" rel="noopener">View CV</a>
+              <a class="btn btn-outline" href="assets/Josh_Yeung_CV.pdf" download>Download CV (PDF)</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section contact" aria-label="Contact">
+        <div class="container contact-inner" data-emailjs-public-key="YOUR_PUBLIC_KEY" data-emailjs-service-id="YOUR_SERVICE_ID" data-emailjs-template-id="YOUR_TEMPLATE_ID">
+          <h2>Contact</h2>
+          <p>Have an opportunity or want to collaborate? Send me a message.</p>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Your name" autocomplete="name" />
+              <span class="error" id="error-name" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+              <span class="error" id="error-email" role="alert"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="How can I help?" ></textarea>
+              <span class="error" id="error-message" role="alert"></span>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-status" id="formStatus" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-social" aria-label="Social links">
+            <a class="icon-link" href="https://github.com/1110JY" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.98 0-1.32.47-2.4 1.23-3.24-.12-.3-.53-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.64.25 2.86.12 3.16.77.84 1.23 1.92 1.23 3.24 0 4.66-2.81 5.67-5.49 5.97.43.37.81 1.1.81 2.22v3.3c0 .32.21.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a class="icon-link" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5v12H3.56v-12h3.38Zm.22-4.03c0 .98-.8 1.78-1.78 1.78S3.6 5.45 3.6 4.47s.8-1.78 1.78-1.78 1.78.8 1.78 1.78ZM20.44 20.5h-3.37v-6.52c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.51 1.7-2.51 3.45v6.63H9.02v-12h3.24v1.64h.05c.45-.85 1.54-1.75 3.17-1.75 3.39 0 4.02 2.24 4.02 5.15v6.96Z"/></svg>
+            </a>
+            <a class="icon-link" href="joshjunmun@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.5-8 5-8-5V6l8 5 8-5v2.5Z"/></svg>
+            </a>
+            <span class="location">Based in: Glasgow, Scotland</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Footer">
+      <div class="container footer-inner">
+        <nav class="footer-nav" aria-label="Quick links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#cv">CV</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p class="copyright">© <span id="year"></span> Josh Yeung. All rights reserved.</p>
+      </div>
+
+      <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        ↑
+      </button>
+    </footer>
+
+    <noscript>
+      JavaScript is disabled. This site uses JS for enhancements (theme, navigation highlights, contact form). Core content remains accessible.
+    </noscript>
+  </body>
+</html> 
