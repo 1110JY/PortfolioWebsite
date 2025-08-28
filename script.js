@@ -13,8 +13,6 @@
   // Year
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-
-
   // Sidebar (mobile) nav toggle
   function closeNav() {
     sidebar?.classList.remove('open');
@@ -26,8 +24,6 @@
   });
   document.querySelectorAll('#site-nav a').forEach((a) => a.addEventListener('click', closeNav));
 
-  // removed expand/collapse; icons-only sidebar
-
   // Smooth scroll offset for sticky header
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
@@ -36,7 +32,6 @@
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
-      // Small offset for scroll positioning
       const offset = 24;
       const y = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top: y, behavior: 'smooth' });
@@ -81,18 +76,15 @@
   }
   function validate(data) {
     let ok = true;
-    // name
     if (!data.name || data.name.trim().length < 2) {
       setError('name', 'Please enter your name.');
       ok = false;
     } else setError('name');
-    // email
     const emailRe = /[^@\s]+@[^@\s]+\.[^@\s]+/;
     if (!emailRe.test(data.email || '')) {
       setError('email', 'Please enter a valid email.');
       ok = false;
     } else setError('email');
-    // message
     if (!data.message || data.message.trim().length < 10) {
       setError('message', 'Please write a slightly longer message.');
       ok = false;
@@ -123,7 +115,6 @@
     formStatus.textContent = 'Sending…';
     try {
       if (!emailConfig.ready) {
-        // Fallback: open mailto
         const subject = encodeURIComponent('Portfolio Contact');
         const body = encodeURIComponent(`${formData.name} <${formData.email}>\n\n${formData.message}`);
         window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
@@ -138,4 +129,81 @@
       formStatus.textContent = 'Something went wrong. Please try again later.';
     }
   });
-})(); 
+
+
+  /* =========================
+     Image Carousel
+  ========================= */
+  let currentSlideIndex = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const totalSlides = slides.length;
+  const track = document.getElementById('carouselTrack');
+  const dots = document.querySelectorAll('.carousel-dot');
+
+  let autoSlideInterval;
+
+  function updateCarousel() {
+    const offset = -currentSlideIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlideIndex);
+    });
+  }
+
+  function changeSlide(direction) {
+    currentSlideIndex += direction;
+    if (currentSlideIndex >= totalSlides) currentSlideIndex = 0;
+    else if (currentSlideIndex < 0) currentSlideIndex = totalSlides - 1;
+    updateCarousel();
+    resetAutoSlide();
+  }
+
+  function currentSlide(slideIndex) {
+    currentSlideIndex = slideIndex - 1;
+    updateCarousel();
+    resetAutoSlide();
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      changeSlide(1);
+    }, 4000);
+  }
+
+  if (track && slides.length) {
+    updateCarousel();
+    startAutoSlide();
+
+    const carousel = document.querySelector('.image-carousel');
+    if (carousel) {
+      carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+      carousel.addEventListener('mouseleave', startAutoSlide);
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const swipeDistance = touchEndX - touchStartX;
+        if (Math.abs(swipeDistance) > swipeThreshold) {
+          if (swipeDistance > 0) changeSlide(-1);
+          else changeSlide(1);
+        }
+      }
+    }
+  }
+})();
