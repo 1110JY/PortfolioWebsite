@@ -403,9 +403,9 @@ a { color: inherit; text-decoration: none; }
 /* Sidebar */
 .sidebar { 
   position: fixed; 
-  top: 24px;
+  top: 120px;
   left: 24px;
-  bottom: 24px;
+  bottom: 120px;
   width: var(--sidebar-w); 
   background: rgba(26, 26, 26, 0.6); 
   border: 1px solid rgba(42, 42, 42, 0.2);
@@ -439,8 +439,10 @@ a { color: inherit; text-decoration: none; }
 
 /* Off-canvas toggle button (mobile) */
 .nav-toggle { position: fixed; top: 16px; left: 16px; z-index: 70; display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(42, 42, 42, 0.3); background: rgba(26, 26, 26, 0.8); color: var(--color-text); box-shadow: 0 10px 30px rgba(0,0,0,.15); backdrop-filter: blur(20px); }
-.nav-toggle .nav-toggle-bar { display: block; width: 18px; height: 2px; background: var(--color-text); border-radius: 2px; }
-.nav-toggle .nav-toggle-bar + .nav-toggle-bar { margin-top: 4px; }
+.nav-toggle .nav-toggle-icon { width: 20px; height: 20px; display: block; transition: transform .25s ease, opacity .2s ease; }
+.nav-toggle .nav-icon-close { position: absolute; opacity: 0; transform: rotate(-90deg) scale(.8); }
+.nav-toggle[aria-expanded="true"] .nav-icon-hamburger { opacity: 0; transform: rotate(90deg) scale(.8); }
+.nav-toggle[aria-expanded="true"] .nav-icon-close { opacity: 1; transform: rotate(0deg) scale(1); }
 
 /* Content shift to make room for sidebar */
 main { margin-left: 0; transition: margin-left .25s ease; }
@@ -597,8 +599,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-accent); 
     transform: translateX(-100%); 
     box-shadow: none; 
     border-radius: 28px;
-    top: 24px;
-    bottom: 24px;
+    top: 120px;
+    bottom: 120px;
     background: rgba(26, 26, 26, 0.6);
     border: 1px solid rgba(42, 42, 42, 0.2);
     backdrop-filter: blur(30px);
