@@ -593,11 +593,11 @@ input:focus, textarea:focus { outline: none; border-color: var(--color-accent); 
   :root { --sidebar-w: 72px; }
   .nav-toggle { display: inline-flex; }
   .sidebar { 
+    left: 0;
     transform: translateX(-100%); 
     box-shadow: none; 
     border-radius: 28px;
     top: 24px;
-    left: 24px;
     bottom: 24px;
     background: rgba(26, 26, 26, 0.6);
     border: 1px solid rgba(42, 42, 42, 0.2);
