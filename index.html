@@ -32,73 +32,74 @@
   <body>
     <a class="skip-link" href="#home">Skip to content</a>
 
-    <aside class="sidebar" id="sidebar" aria-label="Site navigation">
-      <div class="sidebar-inner">
-        <a class="brand" href="#home" aria-label="Josh Yeung home">
-          <img src="assets/favicon.svg" alt="JY logo" width="40" height="40" />
-        </a>
-
-        
-
-        <div class="sidebar-social" aria-label="Social links">
-          <a class="icon-link" href="https://github.com/1110JY" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 25" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.98 0-1.32.47-2.4 1.23-3.24-.12-.3-.53-1.52.12-3.16 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.64.25 2.86.12 3.16.77.84 1.23 1.92 1.23 3.24 0 4.66-2.81 5.67-5.49 5.97.43.37.81 1.1.81 2.22v3.3c0 .32.21.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-          </a>
-          <a class="icon-link" href="http://www.linkedin.com/in/josh-yeung2908" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5v12H3.56v-12h3.38Zm.22-4.03c0 .98-.8 1.78-1.78 1.78S3.6 5.45 3.6 4.47s.8-1.78 1.78-1.78 1.78.8 1.78 1.78ZM20.44 20.5h-3.37v-6.52c0-1.56-.03-3.56-2.17-3.56-2.18 0-2.51 1.7-2.51 3.45v6.63H9.02v-12h3.24v1.64h.05c.45-.85 1.54-1.75 3.17-1.75 3.39 0 4.02 2.24 4.02 5.15v6.96Z"/></svg>
-          </a>
-        </div>
-        
-        <!--Divider-->
-        <div class="sidebar-divider" role="separator" aria-hidden="true"></div>
-
-        <nav id="site-nav" class="site-nav" aria-label="Primary">
-          <ul>
-            <li>
-              <a class="nav-link" href="#home" data-nav="home" aria-label="Home">
-                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8Z"/></svg>
+    <!-- Staggered Menu Navigation (moved outside hero, direct child of body) -->
+    <div class="staggered-menu" data-position="left">
+      <div class="sm-prelayers" aria-hidden="true">
+        <div class="sm-prelayer" style="background: #10b981;"></div>
+        <div class="sm-prelayer" style="background: #1a1a1a;"></div>
+      </div>
+      <header class="staggered-menu-header" aria-label="Main navigation header">
+        <button class="sm-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="staggered-menu-panel" type="button">
+          <span class="sm-toggle-textWrap" aria-hidden="true">
+            <span class="sm-toggle-textInner">
+              <span class="sm-toggle-line">Menu</span>
+              <span class="sm-toggle-line">Close</span>
+            </span>
+          </span>
+          <span class="sm-icon" aria-hidden="true">
+            <span class="sm-icon-line"></span>
+            <span class="sm-icon-line sm-icon-line-v"></span>
+          </span>
+        </button>
+      </header>
+      <aside id="staggered-menu-panel" class="staggered-menu-panel" aria-hidden="true">
+        <div class="sm-panel-inner">
+          <ul class="sm-panel-list" role="list" data-numbering="true">
+            <li class="sm-panel-itemWrap">
+              <a class="sm-panel-item" href="#home" aria-label="Go to home section" data-index="1">
+                <span class="sm-panel-itemLabel">Home</span>
               </a>
             </li>
-            <li>
-              <a class="nav-link" href="#about" data-nav="about" aria-label="About">
-                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.33 0-8 2.17-8 5v2h16v-2c0-2.83-3.67-5-8-5Z"/></svg>
+            <li class="sm-panel-itemWrap">
+              <a class="sm-panel-item" href="#about" aria-label="Learn about me" data-index="2">
+                <span class="sm-panel-itemLabel">About</span>
               </a>
             </li>
-            <li>
-              <a class="nav-link" href="#projects" data-nav="projects" aria-label="Projects">
-                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 3H3v7h7V3Zm11 0h-7v7h7V3ZM10 14H3v7h7v-7Zm11 0h-7v7h7v-7Z"/></svg>
+            <li class="sm-panel-itemWrap">
+              <a class="sm-panel-item" href="#projects" aria-label="View my projects" data-index="3">
+                <span class="sm-panel-itemLabel">Projects</span>
               </a>
             </li>
-            <li>
-              <a class="nav-link" href="#experience" data-nav="experience" aria-label="Experience">
-                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 4h4a2 2 0 0 1 2 2h4v4H4V6h4a2 2 0 0 1 2-2Zm10 8v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6h6v1h4v-1h6Z"/></svg>
+            <li class="sm-panel-itemWrap">
+              <a class="sm-panel-item" href="#experience" aria-label="View my experience" data-index="4">
+                <span class="sm-panel-itemLabel">Experience</span>
               </a>
             </li>
-            <li>
-              <a class="nav-link" href="#cv" data-nav="cv" aria-label="CV">
-                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 0v6h6M8 13h8M8 17h8M8 9h2"/></svg>
+            <li class="sm-panel-itemWrap">
+              <a class="sm-panel-item" href="#cv" aria-label="View my CV" data-index="5">
+                <span class="sm-panel-itemLabel">CV</span>
               </a>
             </li>
-            <li>
-              <a class="nav-link" href="#contact" data-nav="contact" aria-label="Contact">
-                <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4.5-8 5-8-5V6l8 5 8-5v2.5Z"/></svg>
+            <li class="sm-panel-itemWrap">
+              <a class="sm-panel-item" href="#contact" aria-label="Get in touch" data-index="6">
+                <span class="sm-panel-itemLabel">Contact</span>
               </a>
             </li>
           </ul>
-        </nav>
-
-
-      </div>
-    </aside>
-
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
-      <svg class="nav-toggle-icon nav-icon-hamburger" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill="currentColor" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>
-      </svg>
-      <svg class="nav-toggle-icon nav-icon-close" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-        <path fill="currentColor" d="M18.3 5.71 12 12.01l-6.29-6.3-1.41 1.42 6.29 6.29-6.3 6.29 1.42 1.41 6.29-6.29 6.29 6.3 1.41-1.42-6.29-6.29 6.3-6.29-1.42-1.41Z"/>
-      </svg>
-    </button>
+          <div class="sm-socials" aria-label="Social links">
+            <h3 class="sm-socials-title">Socials</h3>
+            <ul class="sm-socials-list" role="list">
+              <li class="sm-socials-item">
+                <a href="https://github.com/1110JY" target="_blank" rel="noopener noreferrer" class="sm-socials-link">GitHub</a>
+              </li>
+              <li class="sm-socials-item">
+                <a href="http://www.linkedin.com/in/josh-yeung2908" target="_blank" rel="noopener noreferrer" class="sm-socials-link">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
 
     <main>
       <!-- Hero / Intro -->
@@ -106,53 +107,43 @@
         <div class="container hero-inner">
           <div class="hero-content">
             <h1 class="hero-title">Josh Yeung</h1>
-            <p class="hero-tagline">Computing Graduate • Web Developer • Problem Solver</p>
-            <p class="hero-subtext">I build clean, modern web experiences with a focus on performance, accessibility, and delightful UX.</p>
+            <p class="hero-tagline">Full Stack Developer • Computing Graduate • Problem Solver</p>
+            <p class="hero-subtext">
+              A developer who loves building things.
+              I create clean, modern web experiences that actually work. I'm passionate about turning ideas into 
+              functional, beautiful applications that people love using.
+            </p>
+            <p class="hero-subtext">
+              When I'm not coding, you'll find me exploring new technologies, working on side projects, 
+              or figuring out how to make the web a better place. Let's build something amazing together!
+            </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#projects">View My Work</a>
-              <a class="btn btn-outline" href="assets/Josh Yeung - CV.pdf" target="_blank" rel="noopener" download>Download CV</a>
+              <a class="btn btn-primary" href="#projects">Check Out My Work</a>
+              <a class="btn btn-outline" href="assets/Josh Yeung - CV.pdf" target="_blank" rel="noopener" download>Grab My CV</a>
             </div>
           </div>
           <div class="hero-visual" aria-hidden="true">
-            <div class="image-carousel">
-              <div class="carousel-container">
-                <div class="carousel-track" id="carouselTrack">
-                  <div class="carousel-slide">
-                    <img src="assets/images/Carousel1.png" alt="Web Development" />
-                    <div class="carousel-overlay">
-                      <!-- <h4>Web Development</h4>
-                      <p>Building responsive and modern web applications</p> -->
-                    </div>
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=400&fit=crop&crop=center" alt="Code Editor" />
-                    <div class="carousel-overlay">
-                      <!-- <h4>Clean Code</h4>
-                      <p>Writing maintainable and efficient solutions</p> -->
-                    </div>
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="assets/images/Carousel3.png" alt="Tech Stack" />
-                    <div class="carousel-overlay">
-                      <!-- <h4>Modern Tech</h4>
-                      <p>Working with cutting-edge technologies</p> -->
-                    </div>
-                  </div>
-                  <div class="carousel-slide">
-                    <img src="assets/images/Carousel4.png" alt="Collaboration" />
-                    <div class="carousel-overlay">
-                      <!-- <h4>Team Collaboration</h4>
-                      <p>Working together to build amazing products</p> -->
-                    </div>
+            <div class="card-stack-container">
+              <div class="stack-container" id="stackContainer">
+                <div class="card-wrapper" data-card-id="1">
+                  <div class="card">
+                    <img src="assets/images/Carousel1.png" alt="Web Development" class="card-image" />
                   </div>
                 </div>
-
-                
-                <div class="carousel-dots" id="carouselDots">
-                  <span class="carousel-dot active" onclick="currentSlide(1)"></span>
-                  <span class="carousel-dot" onclick="currentSlide(2)"></span>
-                  <span class="carousel-dot" onclick="currentSlide(3)"></span>
-                  <span class="carousel-dot" onclick="currentSlide(4)"></span>
+                <div class="card-wrapper" data-card-id="2">
+                  <div class="card">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=400&fit=crop&crop=center" alt="Code Editor" class="card-image" />
+                  </div>
+                </div>
+                <div class="card-wrapper" data-card-id="3">
+                  <div class="card">
+                    <img src="assets/images/Carousel3.png" alt="Tech Stack" class="card-image" />
+                  </div>
+                </div>
+                <div class="card-wrapper" data-card-id="4">
+                  <div class="card">
+                    <img src="assets/images/Carousel4.png" alt="Collaboration" class="card-image" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,20 +167,68 @@
               Outside of coding, you'll find me exploring new technologies, working on side projects, and staying active. I thrive in collaborative
               environments where I can learn from others and contribute meaningfully.
             </p>
-            <ul class="tags" aria-label="Tech stack">
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>HTML & CSS</li>
-              <li>Git</li>
-              <li>Python</li>
-              <li>SQL</li>
-              <li>Express</li>
-              <li>Git</li>
-              <li>AWS</li>
-              <li>Docker</li>
-            </ul>
+            
+            <div class="tech-stack">
+              <h4>My main tech stack includes:</h4>
+              <div class="tech-items">
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon">
+                  <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="tech-icon">
+                  <span>TypeScript</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon">
+                  <span>React</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="tech-icon">
+                  <span>Next.js</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-icon">
+                  <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="tech-icon">
+                  <span>HTML</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="tech-icon">
+                  <span>CSS</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" class="tech-icon">
+                  <span>Tailwind CSS</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon">
+                  <span>Python</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL" class="tech-icon">
+                  <span>SQL</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-icon">
+                  <span>Git</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="tech-icon">
+                  <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-icon">
+                  <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-icon">
+                  <span>MongoDB</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
