@@ -632,4 +632,38 @@
       loop: true
     });
   }
+
+  /* =========================
+     Education timeline reveal
+  ========================= */
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  if (timelineItems.length) {
+    // Respect user's reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const tlObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          // Add a slight stagger based on index for nicer visual flow
+          if (!prefersReducedMotion) {
+            const idx = Array.from(timelineItems).indexOf(el);
+            el.style.transitionDelay = `${Math.min(0.18 + idx * 0.08, 0.6)}s`;
+          }
+          el.classList.add('in-view');
+          // Once visible, stop observing
+          tlObserver.unobserve(el);
+        }
+      });
+    }, { root: null, threshold: 0.14 });
+
+    timelineItems.forEach((item) => {
+      // Make items keyboard-focusable for accessibility
+      item.setAttribute('tabindex', '0');
+      // Add focus state that mirrors the in-view style
+      item.addEventListener('focus', () => item.classList.add('in-view'));
+      item.addEventListener('blur', () => {});
+      tlObserver.observe(item);
+    });
+  }
 })();
