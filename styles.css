@@ -1,7 +1,7 @@
 /* Josh Yeung — Portfolio Styles */
 
 :root {
-  --color-accent: #10b981; /* Modern green accent like Legions.dev */
+  --color-accent: #10b981; /* Modern green accent */
   --color-accent-hover: #059669; /* Darker green for hover states */
   --color-bg: #0a0a0a; /* Deeper black background */
   --color-text: #f9fafb; /* Slightly warmer white */
@@ -1287,7 +1287,28 @@ input::placeholder, textarea::placeholder {
 .education { background: var(--color-section-dark); }
 .education .section-intro { color: var(--color-text-secondary-on-dark); margin-bottom: 18px; }
 .timeline { display: flex; flex-direction: column; gap: 28px; margin-top: 12px; }
-.timeline-item { display: grid; grid-template-columns: 72px 36px 1fr; gap: 16px; align-items: start; opacity: 0; transform: translateY(26px); transition: opacity 520ms cubic-bezier(.2,.9,.2,1), transform 520ms cubic-bezier(.2,.9,.2,1); }
+.timeline { position: relative; }
+
+/* Animated central line (grows from top when timeline becomes visible) */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: calc(72px + 18px); /* aligns with center column */
+  top: 18px;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(16,185,129,0.08));
+  border-radius: 2px;
+  transition: height 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+.timeline.line-grow::before { height: calc(100% - 36px); }
+
+/* Respect reduced motion: make line visible immediately with no transition */
+@media (prefers-reduced-motion: reduce) {
+  .timeline::before { transition: none; height: calc(100% - 36px); }
+}
+.timeline-item { display: grid; grid-template-columns: 72px 36px 1fr; gap: 14px; align-items: start; opacity: 0; transform: translateY(20px); transition: opacity 480ms cubic-bezier(.2,.9,.2,1), transform 480ms cubic-bezier(.2,.9,.2,1); }
 .timeline-item.in-view { opacity: 1; transform: translateY(0); }
 .timeline-left { display:flex; align-items:flex-start; justify-content:center; }
 .edu-logo { width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); display:flex; align-items:center; justify-content:center; color:var(--color-text); font-weight:700; border:1px solid var(--color-border); box-shadow: var(--shadow-elev-1); font-size:0.95rem; }
@@ -1299,10 +1320,20 @@ input::placeholder, textarea::placeholder {
 .timeline-content .degree { margin: 0 0 6px 0; color: var(--color-text-secondary-on-dark); font-weight:600; }
 .timeline-content .meta { margin: 0; color: var(--color-text-secondary-on-dark); font-size:0.9rem; }
 
+/* Focus styles for accessibility */
+.timeline-item:focus-visible { outline: 3px solid rgba(16,185,129,0.12); outline-offset: 6px; border-radius: 12px; }
+
+/* Hide the connecting line for the last item to prevent overflow */
+.timeline-item:last-of-type .timeline-line { display: none; }
+
+/* Slightly smaller logo shadows for subtlety */
+.edu-logo { box-shadow: 0 10px 22px rgba(0,0,0,0.28); }
+
 @media (max-width: 780px) {
   .timeline-item { grid-template-columns: 56px 28px 1fr; }
   .timeline-line { height: calc(100% + 20px); }
   .edu-logo { width:48px; height:48px; font-size:0.85rem; }
+  .timeline::before { left: calc(56px + 14px); }
 }
 
 .footer-inner { 
