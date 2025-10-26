@@ -48,27 +48,22 @@
     setInitialPositions() {
       if (!this.panel) return;
 
-      // Check if menu is positioned on the left or right
       const isLeft = this.wrapper.getAttribute('data-position') === 'left';
       const initialTransform = isLeft ? 'translateX(-100%)' : 'translateX(100%)';
 
-      // Set panel and prelayers off-screen
       this.panel.style.transform = initialTransform;
       this.prelayers.forEach(layer => {
         layer.style.transform = initialTransform;
       });
 
-      // Set icon initial state
       if (this.icon) {
         this.icon.style.transform = 'rotate(0deg)';
       }
 
-      // Set text initial state
       if (this.textInner) {
         this.textInner.style.transform = 'translateY(0%)';
       }
 
-      // Set menu items initial state
       const itemLabels = this.panel.querySelectorAll('.sm-panel-itemLabel');
       const numbers = this.panel.querySelectorAll('.sm-panel-item');
       const socialTitle = this.panel.querySelector('.sm-socials-title');
@@ -152,18 +147,15 @@
       this.toggle?.setAttribute('aria-label', 'Open menu');
       this.panel?.setAttribute('aria-hidden', 'true');
 
-      // Check if menu is positioned on the left or right
       const isLeft = this.wrapper.getAttribute('data-position') === 'left';
       const closeTransform = isLeft ? 'translateX(-100%)' : 'translateX(100%)';
 
-      // Animate everything out
       const allElements = [this.panel, ...this.prelayers];
       allElements.forEach(el => {
         el.style.transition = 'transform 0.32s cubic-bezier(0.55, 0.085, 0.68, 0.53)';
         el.style.transform = closeTransform;
       });
 
-      // Reset menu items
       setTimeout(() => {
         this.setInitialPositions();
       }, 320);
@@ -230,14 +222,12 @@
     animateText(opening) {
       if (!this.textInner) return;
 
-      // Simple text swap with animation
       const targetY = opening ? '-50%' : '0%';
       this.textInner.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
       this.textInner.style.transform = `translateY(${targetY})`;
     }
   }
 
-  // Smooth scroll offset for sticky header
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
@@ -251,7 +241,6 @@
     });
   });
 
-  // Active section highlighting
   const sections = Array.from(document.querySelectorAll('section[id]'));
   const navLinks = new Map(
     Array.from(document.querySelectorAll('.sm-panel-item')).map((el) => [el.getAttribute('href'), el])
@@ -273,7 +262,6 @@
   );
   sections.forEach((s) => obs.observe(s));
 
-  // Initialize Staggered Menu
   const staggeredMenuWrapper = document.querySelector('.staggered-menu');
   if (staggeredMenuWrapper) {
     new StaggeredMenu(staggeredMenuWrapper);
@@ -377,7 +365,6 @@
     }
 
     init() {
-      // Create cursor element if needed
       if (this.showCursor) {
         this.cursorElement = document.createElement('span');
         this.cursorElement.className = 'typing-cursor';
@@ -386,7 +373,6 @@
         this.startCursorBlink();
       }
 
-      // Start typing animation
       this.startTyping();
     }
 
@@ -403,27 +389,23 @@
       const currentText = this.text[this.currentTextIndex];
 
       if (this.isDeleting) {
-        // Delete characters
         if (this.displayedText.length > 0) {
           this.displayedText = this.displayedText.slice(0, -1);
           this.updateDisplay();
           setTimeout(() => this.startTyping(), this.deletingSpeed);
         } else {
-          // Finished deleting, move to next text
           this.isDeleting = false;
           this.currentTextIndex = (this.currentTextIndex + 1) % this.text.length;
           this.currentCharIndex = 0;
           setTimeout(() => this.startTyping(), this.pauseDuration);
         }
       } else {
-        // Type characters
         if (this.currentCharIndex < currentText.length) {
           this.displayedText += currentText[this.currentCharIndex];
           this.currentCharIndex++;
           this.updateDisplay();
           setTimeout(() => this.startTyping(), this.typingSpeed);
         } else {
-          // Finished typing current text
           if (this.text.length > 1 && this.loop) {
             setTimeout(() => {
               this.isDeleting = true;
@@ -435,12 +417,10 @@
     }
 
     updateDisplay() {
-      // Update only the text content, preserve the cursor
       const textContent = this.element.childNodes[0];
       if (textContent && textContent.nodeType === Node.TEXT_NODE) {
         textContent.textContent = this.displayedText;
       } else {
-        // Create text node if it doesn't exist
         const textNode = document.createTextNode(this.displayedText);
         this.element.insertBefore(textNode, this.element.firstChild);
       }
@@ -485,7 +465,7 @@
         `;
         card.style.opacity = Math.max(0.4, 1 - Math.abs(offset) * 0.3);
 
-        // Only the top card should be interactive
+
         card.style.pointerEvents = isActive ? 'auto' : 'none';
       });
     }
@@ -503,7 +483,6 @@
       document.addEventListener('touchmove', (e) => this.onDrag(e.touches[0]), { passive: false });
       document.addEventListener('touchend', () => this.endDrag());
 
-      // Prevent context menu on long press
       this.container.addEventListener('contextmenu', (e) => e.preventDefault());
     }
 
@@ -520,7 +499,6 @@
       card.style.transition = 'none';
       card.style.cursor = 'grabbing';
 
-      // Prevent text selection
       document.body.style.userSelect = 'none';
     }
 
@@ -542,7 +520,6 @@
         scale(1.05)
       `;
 
-      // Visual feedback for swipe direction
       const opacity = Math.max(0.3, 1 - Math.abs(this.currentX) / 200);
       card.style.opacity = opacity;
     }
@@ -560,10 +537,8 @@
       card.style.cursor = 'grab';
 
       if (velocity > threshold) {
-        // Card swiped away - animate out and show next
         this.swipeCard(this.currentX > 0 ? 'right' : 'left');
       } else {
-        // Snap back to original position
         card.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
         card.style.transform = '';
         card.style.opacity = '';
@@ -638,7 +613,6 @@
   ========================= */
   const timelineItems = document.querySelectorAll('.timeline-item');
   if (timelineItems.length) {
-    // Respect user's reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const timelineContainer = document.querySelector('.timeline');
@@ -648,38 +622,32 @@
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const el = entry.target;
-          // Add a slight stagger based on index for nicer visual flow
           if (!prefersReducedMotion) {
             const idx = Array.from(timelineItems).indexOf(el);
             el.style.transitionDelay = `${Math.min(0.18 + idx * 0.08, 0.6)}s`;
           }
           el.classList.add('in-view');
 
-          // Grow the central line once when the first item appears
           if (!lineGrown && timelineContainer) {
             lineGrown = true;
-            // If reduced motion, add class without animation
             if (prefersReducedMotion) timelineContainer.classList.add('line-grow');
             else setTimeout(() => timelineContainer.classList.add('line-grow'), 90);
           }
 
-          // Once visible, stop observing this element
           tlObserver.unobserve(el);
         }
       });
     }, { root: null, threshold: 0.14 });
 
     timelineItems.forEach((item) => {
-      // Make items keyboard-focusable for accessibility
       item.setAttribute('tabindex', '0');
-      // Add focus state that mirrors the in-view style
       item.addEventListener('focus', () => item.classList.add('in-view'));
       item.addEventListener('blur', () => { });
       tlObserver.observe(item);
     });
   }
 
-  // When a timeline item receives keyboard focus, ensure it's visible
+
   if (timelineItems.length) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     timelineItems.forEach(item => {

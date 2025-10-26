@@ -60,7 +60,7 @@ img, svg, video {
   margin-inline: auto;
 }
 
-/* Card Stack Styles - Replacing Image Carousel */
+/* Card Stack Styles*/
 .card-stack-container {
   position: relative;
   width: min(85vw, 500px);
@@ -131,13 +131,13 @@ img, svg, video {
 
 
 
-/* Section Backgrounds with Curved Sides */
+/* Section Backgrounds */
 .section {
   padding-block: var(--section-pad-y);
   position: relative;
 }
 
-/* Hero section - dark background like rest of site */
+/* Hero section */
 .hero {
   background: var(--color-section-dark);
   min-height: 100svh;
@@ -147,13 +147,12 @@ img, svg, video {
   overflow: hidden;
 }
 
-/* About section - slightly lighter dark background */
+/* About section*/
 .about {
   background: var(--color-section-light);
   position: relative;
 }
 
-/* Remove curved sections for cleaner look like Legions.dev */
 .about::before {
   display: none;
 }
@@ -162,7 +161,7 @@ img, svg, video {
   display: none;
 }
 
-/* Projects section - dark background */
+/* Projects section */
 .projects {
   background: var(--color-section-dark);
   position: relative;
@@ -172,7 +171,7 @@ img, svg, video {
   display: none;
 }
 
-/* Experience section - slightly lighter dark background */
+/* Experience section */
 .experience {
   background: var(--color-section-light);
   position: relative;
@@ -186,7 +185,7 @@ img, svg, video {
   display: none;
 }
 
-/* CV section - dark background */
+/* CV section */
 .cv {
   background: var(--color-section-light);
   position: relative;
@@ -196,7 +195,7 @@ img, svg, video {
   display: none;
 }
 
-/* Contact section - slightly lighter dark background */
+/* Contact section */
 .contact {
   background: var(--color-section-dark);
   position: relative;
@@ -757,7 +756,7 @@ main { margin-left: 0; transition: margin-left .25s ease; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  min-height: 1.2em; /* Prevent layout shift during typing */
+  min-height: 1.2em; 
   display: flex;
   align-items: center;
 }
@@ -769,7 +768,7 @@ main { margin-left: 0; transition: margin-left .25s ease; }
   font-weight: 400;
   color: var(--color-accent);
   opacity: 1;
-  animation: none; /* We'll handle blinking with JavaScript */
+  animation: none; 
 }
 
 .hero-tagline { 
@@ -979,7 +978,7 @@ main { margin-left: 0; transition: margin-left .25s ease; }
   aspect-ratio: 4/5; 
 }
 
-/* Tech Stack Styling - Similar to Legion's design */
+/* Tech Stack Styling */
 .tech-stack {
   margin-top: 32px;
 }
@@ -1164,7 +1163,7 @@ main { margin-left: 0; transition: margin-left .25s ease; }
 .experience-item .meta { font-size: 0.95rem; }
 .experience-item ul { list-style: disc; margin-left: 22px; }
 
-/* Experience meta text in dark sections */
+/* Experience */
 .experience .experience-item .meta {
   color: var(--color-text-secondary-on-dark);
 }
@@ -1250,7 +1249,7 @@ input::placeholder, textarea::placeholder {
   font-weight: 500;
 }
 
-.contact-social { display: flex; align-items: center; gap: 14px; margin-top: 18px; flex-wrap: wrap; justify-content: center; } /* Added justify-content: center; */
+.contact-social { display: flex; align-items: center; gap: 14px; margin-top: 18px; flex-wrap: wrap; justify-content: center; } 
 .icon-link:hover { transform: translateY(-1px); box-shadow: 0 10px 30px rgba(0,0,0,.2); }
 .location { 
   margin-left: 8px; 
@@ -1262,17 +1261,17 @@ input::placeholder, textarea::placeholder {
   hyphens: auto;
 }
 
-/* Contact form status in dark sections */
+/* Contact form */
 .contact .form-status {
   color: var(--color-text-secondary-on-dark);
 }
 
-/* Contact social icons in dark sections */
+/* Contact social icons */
 .contact .icon-link {
   color: var(--color-text-on-dark);
 }
 
-/* Contact location in dark sections */
+/* Contact location */
 .contact .location {
   color: var(--color-text-secondary-on-dark);
 }
@@ -1289,11 +1288,11 @@ input::placeholder, textarea::placeholder {
 .timeline { display: flex; flex-direction: column; gap: 28px; margin-top: 12px; }
 .timeline { position: relative; }
 
-/* Animated central line (grows from top when timeline becomes visible) */
+
 .timeline::before {
   content: '';
   position: absolute;
-  left: calc(72px + 18px); /* aligns with center column */
+  left: calc(72px + 18px); 
   top: 18px;
   width: 2px;
   height: 0;
@@ -1304,7 +1303,7 @@ input::placeholder, textarea::placeholder {
 }
 .timeline.line-grow::before { height: calc(100% - 36px); }
 
-/* Respect reduced motion: make line visible immediately with no transition */
+
 @media (prefers-reduced-motion: reduce) {
   .timeline::before { transition: none; height: calc(100% - 36px); }
 }
@@ -1320,13 +1319,13 @@ input::placeholder, textarea::placeholder {
 .timeline-content .degree { margin: 0 0 6px 0; color: var(--color-text-secondary-on-dark); font-weight:600; }
 .timeline-content .meta { margin: 0; color: var(--color-text-secondary-on-dark); font-size:0.9rem; }
 
-/* Focus styles for accessibility */
+
 .timeline-item:focus-visible { outline: 3px solid rgba(16,185,129,0.12); outline-offset: 6px; border-radius: 12px; }
 
-/* Hide the connecting line for the last item to prevent overflow */
+
 .timeline-item:last-of-type .timeline-line { display: none; }
 
-/* Slightly smaller logo shadows for subtlety */
+
 .edu-logo { box-shadow: 0 10px 22px rgba(0,0,0,0.28); }
 
 @media (max-width: 780px) {
@@ -1436,7 +1435,6 @@ input::placeholder, textarea::placeholder {
     height: 250px;
   }
 
-  /* Better contact section handling on mobile */
   .contact-social {
     flex-direction: column;
     gap: 12px;
@@ -1565,7 +1563,6 @@ input::placeholder, textarea::placeholder {
     font-size: 0.85rem;
   }
 
-  /* Ensure icons in sidebar remain accessible on very small screens */
   .sidebar .site-nav .nav-icon {
     width: 22px;
     height: 22px;
@@ -1581,7 +1578,6 @@ input::placeholder, textarea::placeholder {
     height: 32px;
   }
 
-  /* Prevent horizontal overflow */
   body {
     overflow-x: hidden;
   }
