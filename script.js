@@ -6,6 +6,8 @@
   const yearEl = document.getElementById('year');
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
+  const heroScroll = document.querySelector('.hero-scroll');
+  const fadeItems = document.querySelectorAll('.fade-in');
 
   // Year
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -275,10 +277,33 @@
   function onScroll() {
     if (window.scrollY > 400) backToTop?.classList.add('show');
     else backToTop?.classList.remove('show');
+
+    if (heroScroll) {
+      const fadeEnd = 400;
+      const y = Math.min(Math.max(window.scrollY, 0), fadeEnd);
+      const opacity = 1 - y / fadeEnd;
+      heroScroll.style.opacity = opacity.toFixed(2);
+    }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Fade-in on scroll
+  if (fadeItems.length) {
+    const fadeObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    fadeItems.forEach(el => fadeObserver.observe(el));
+  }
 
   // Contact form validation + EmailJS
   function setError(id, message) {
@@ -589,6 +614,24 @@
   const cardStackContainer = document.querySelector('.card-stack-container');
   if (cardStackContainer) {
     new CardStack(cardStackContainer);
+  }
+
+  // Minimal parallax on hero circle
+  const hero = document.querySelector('.hero');
+  const heroCircle = document.querySelector('.hero-circle');
+  if (hero && heroCircle) {
+    const dampen = (value) => Math.max(Math.min(value, 18), -18);
+    hero.addEventListener('pointermove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const dx = (e.clientX - rect.left - rect.width / 2) / rect.width;
+      const dy = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      heroCircle.style.setProperty('--mx', `${dampen(dx * 40)}px`);
+      heroCircle.style.setProperty('--my', `${dampen(dy * 40)}px`);
+    });
+    hero.addEventListener('pointerleave', () => {
+      heroCircle.style.setProperty('--mx', '0px');
+      heroCircle.style.setProperty('--my', '0px');
+    });
   }
 
   // Initialize typing effect for hero title

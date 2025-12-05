@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Josh Yeung - Portfolio</title>
+  <title>Josh Yeung</title>
   <meta name="description" content="Portfolio of Josh Yeung" />
   <meta name="theme-color" content="#00BFFF" />
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <!-- Fonts: Poppins (headings) & Inter (body) {Backup Font} -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,142 +39,74 @@
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
 
-  <!-- Staggered Menu Navigation -->
-  <div class="staggered-menu" data-position="left">
-    <div class="sm-prelayers" aria-hidden="true">
-      <div class="sm-prelayer" style="background: #10b981;"></div>
-      <div class="sm-prelayer" style="background: #1a1a1a;"></div>
+
+  <div class="corner-container corner-top">
+    <div class="corner corner-tl">
+      <p class="corner-label">Josh Yeung</p>
+      <p class="corner-meta">Full Stack Developer</p>
     </div>
-    <header class="staggered-menu-header" aria-label="Main navigation header">
-      <button class="sm-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="staggered-menu-panel"
-        type="button">
-        <span class="sm-toggle-textWrap" aria-hidden="true">
-          <span class="sm-toggle-textInner">
-            <span class="sm-toggle-line">Menu</span>
-            <span class="sm-toggle-line">Close</span>
-          </span>
-        </span>
-        <span class="sm-icon" aria-hidden="true">
-          <span class="sm-icon-line"></span>
-          <span class="sm-icon-line sm-icon-line-v"></span>
-        </span>
-      </button>
-    </header>
-    <aside id="staggered-menu-panel" class="staggered-menu-panel" aria-hidden="true">
-      <div class="sm-panel-inner">
-        <ul class="sm-panel-list" role="list" data-numbering="true">
-          <li class="sm-panel-itemWrap">
-            <a class="sm-panel-item" href="#home" aria-label="Go to home section" data-index="1">
-              <span class="sm-panel-itemLabel">Home</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap">
-            <a class="sm-panel-item" href="#about" aria-label="Learn about me" data-index="2">
-              <span class="sm-panel-itemLabel">About</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap">
-            <a class="sm-panel-item" href="#projects" aria-label="View my projects" data-index="3">
-              <span class="sm-panel-itemLabel">Projects</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap">
-            <a class="sm-panel-item" href="#experience" aria-label="View my experience" data-index="4">
-              <span class="sm-panel-itemLabel">Experience</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap">
-            <a class="sm-panel-item" href="#cv" aria-label="View my CV" data-index="5">
-              <span class="sm-panel-itemLabel">CV</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap">
-            <a class="sm-panel-item" href="#contact" aria-label="Get in touch" data-index="6">
-              <span class="sm-panel-itemLabel">Contact</span>
-            </a>
-          </li>
-        </ul>
-        <div class="sm-socials" aria-label="Social links">
-          <h3 class="sm-socials-title">Socials</h3>
-          <ul class="sm-socials-list" role="list">
-            <li class="sm-socials-item">
-              <a href="https://github.com/1110JY" target="_blank" rel="noopener noreferrer"
-                class="sm-socials-link">GitHub</a>
-            </li>
-            <li class="sm-socials-item">
-              <a href="http://www.linkedin.com/in/josh-yeung2908" target="_blank" rel="noopener noreferrer"
-                class="sm-socials-link">LinkedIn</a>
-            </li>
-          </ul>
-        </div>
+    <div class="corner corner-tr">
+      <nav class="corner-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="corner-meta">Glasgow, United Kingdom</p>
+    </div>
+  </div>
+
+  <div class="corner-container corner-bottom">
+    <div class="corner corner-bl">
+      <p class="corner-meta">Available for new roles</p>
+      <div class="corner-links">
+        <a class="link-inline" href="https://github.com/1110JY" target="_blank" rel="noopener">GitHub</a>
+        <span class="dot">&middot;</span>
+        <a class="link-inline" href="http://www.linkedin.com/in/josh-yeung2908" target="_blank"
+          rel="noopener">LinkedIn</a>
       </div>
-    </aside>
+    </div>
+    <div class="corner corner-br">
+      <div class="corner-links">
+        <a class="link-inline" href="mailto:joshjunmun@gmail.com">Email</a>
+        <span class="dot">&middot;</span>
+        <a class="link-inline" href="assets/Josh Yeung - CV.pdf" target="_blank" rel="noopener" download>CV</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to explore</span>
+    </div>
   </div>
 
   <main>
     <!-- Hero / Intro -->
     <section id="home" class="section hero" aria-label="Introduction">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1 class="hero-title">Josh Yeung</h1>
-          <p class="hero-tagline">Full Stack Developer • Computing Graduate • Problem Solver</p>
-          <p class="hero-subtext">
-            A developer driven by curiosity and creativity. I design and build applications that are both practical and
-            meaningful. I love turning ideas into smooth, enjoyable experiences that make everyday tasks simpler. When
-            I’m not coding, you’ll likely find me playing badminton, diving into new tech, or immersed in a good game.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Check Out My Work</a>
-            <a class="btn btn-outline" href="assets/Josh Yeung - CV.pdf" target="_blank" rel="noopener" download>Grab My
-              CV</a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="card-stack-container">
-            <div class="stack-container" id="stackContainer">
-              <div class="card-wrapper" data-card-id="1">
-                <div class="card">
-                  <img src="assets/images/Carousel1.png" alt="Web Development" class="card-image" />
-                </div>
-              </div>
-              <div class="card-wrapper" data-card-id="2">
-                <div class="card">
-                  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=400&fit=crop&crop=center"
-                    alt="Code Editor" class="card-image" />
-                </div>
-              </div>
-              <div class="card-wrapper" data-card-id="3">
-                <div class="card">
-                  <img src="assets/images/Carousel3.png" alt="Tech Stack" class="card-image" />
-                </div>
-              </div>
-              <div class="card-wrapper" data-card-id="4">
-                <div class="card">
-                  <img src="assets/images/Carousel4.png" alt="Collaboration" class="card-image" />
-                </div>
-              </div>
+      <div class="container hero-grid">
+        <div class="hero-center">
+            <div class="hero-core">
+              <p class="hero-title">Josh Yeung</p>
+              <p class="hero-subline">Pragmatic, product-minded engineering.</p>
+              <p class="hero-subtext">I build fast, resilient web experiences with React, TypeScript, and Node.</p>
             </div>
-          </div>
         </div>
       </div>
     </section>
-
     <!-- About Me -->
-    <section id="about" class="section about" aria-label="About me">
+    <section id="about" class="section about fade-in" aria-label="About me">
       <div class="container about-inner">
         <div class="about-media">
-          <img src="assets/images/headshot.svg" alt="Headshot of Josh Yeung" loading="lazy" />
+          <img src="assets/images/Headshot.png" alt="Headshot of Josh Yeung" loading="lazy" />
         </div>
         <div class="about-content">
           <h2>About Me</h2>
           <p>
-            I’m a Computing graduate with a strong focus on creating reliable, user-friendly software. My interests lie
+            I'm a Computing graduate with a strong focus on creating reliable, user-friendly software. My interests lie
             in crafting clean, maintainable code and designing experiences that feel natural to use.
           </p>
           <p>
-            I enjoy working on projects that challenge me to learn something new, whether it’s exploring emerging
+            I enjoy working on projects that challenge me to learn something new, whether it's exploring emerging
             technologies or refining the details that make an app truly intuitive. Collaboration is where I thrive most,
-            sharing ideas and building solutions together keeps me inspired both personally and professionally.
+            and sharing ideas and building solutions together keeps me inspired.
           </p>
 
           <div class="tech-stack">
@@ -258,118 +190,145 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section projects" aria-label="Projects">
+    <section id="projects" class="section projects fade-in" aria-label="Projects">
       <div class="container">
         <h2>Projects</h2>
         <div class="project-grid">
           <!-- Project 1 -->
-          <article class="project-card">
-            <img src="assets/images/BadmintonBuddy.png" alt="Screenshot of Project One" loading="lazy" />
-            <div class="project-body">
-              <h3>Badminton Buddy</h3>
-              <p>Badminton Stats Tracker</p>
-              <ul class="tags">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Next.js</li>
-                <li>Supabase</li>
-                <li>Vercel</li>
-              </ul>
+          <details class="project-card">
+            <summary class="project-summary">
+              <img class="project-thumb" src="assets/images/BadmintonBuddy.png" alt="Badminton Buddy cover"
+                loading="lazy" />
+              <div class="project-meta">
+                <h3><a class="project-title-link" href="https://badminton-buddyxyz.vercel.app/" target="_blank"
+                    rel="noopener">Badminton Buddy</a></h3>
+                <p>Badminton Stats Tracker</p>
+                <ul class="tags">
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>Next.js</li>
+                  <li>Supabase</li>
+                  <li>Vercel</li>
+                </ul>
+                <span class="project-preview-hint">Click to preview</span>
+              </div>
+            </summary>
+            <div class="project-drawer">
               <div class="project-links">
                 <a href="https://github.com/1110JY/BadmintonBuddyV2.git" target="_blank" rel="noopener"
                   class="link">GitHub</a>
               </div>
               <div class="video-embed image-embed">
-                <img src="assets/BadmintonBuddyDemo.gif" alt="Project Two Demo" loading="lazy" />
+                <img src="assets/BadmintonBuddyDemo.gif" alt="Badminton Buddy demo" loading="lazy" />
               </div>
             </div>
-          </article>
+          </details>
 
           <!-- Project 2 -->
-          <article class="project-card">
-            <img src="assets/images/FridgetoFeast.png" alt="Screenshot of Project Two" loading="lazy" />
-            <div class="project-body">
-              <h3>Fridge to Feast</h3>
-              <p>Recipe matcher than minmises waste and maximises flavour</p>
-              <ul class="tags">
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Express</li>
-              </ul>
+          <details class="project-card">
+            <summary class="project-summary">
+              <img class="project-thumb" src="assets/images/FridgetoFeast.png" alt="Fridge to Feast cover"
+                loading="lazy" />
+              <div class="project-meta">
+                <h3><a class="project-title-link" href="https://github.com/1110JY/FridgeToFeast/tree/master"
+                    target="_blank" rel="noopener">Fridge to Feast</a></h3>
+                <p>Recipe matcher that minimises waste and maximises flavour.</p>
+                <ul class="tags">
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>Express</li>
+                </ul>
+                <span class="project-preview-hint">Click to preview</span>
+              </div>
+            </summary>
+            <div class="project-drawer">
               <div class="project-links">
                 <a href="https://github.com/1110JY/FridgeToFeast/tree/master" target="_blank" rel="noopener"
                   class="link">GitHub</a>
               </div>
               <div class="video-embed image-embed">
-                <img src="assets/FridgetoFeast.gif" alt="Project Two Demo" loading="lazy" />
+                <img src="assets/FridgetoFeast.gif" alt="Fridge to Feast demo" loading="lazy" />
               </div>
             </div>
-          </article>
+          </details>
 
           <!-- Project 3 -->
-          <article class="project-card">
-            <img src="assets/images/CampusHabitHero.png" alt="Screenshot of Project Three" loading="lazy" />
-            <div class="project-body">
-              <h3>Campus Habit Hero</h3>
-              <p>A data visualization dashboard with interactive charts.</p>
-              <ul class="tags">
-                <li>React</li>
-                <li>Node.js</li>
-                <li>MongoDB</li>
-              </ul>
-              <div class="video-embed">
-                <iframe src="" title="Project Three Demo" loading="lazy" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
+          <details class="project-card">
+            <summary class="project-summary">
+              <img class="project-thumb" src="assets/images/CrochetsbyOnYee.png" alt="Crochets by On-Yee cover"
+                loading="lazy" />
+              <div class="project-meta">
+                <h3><a class="project-title-link" href="https://github.com/1110JY/crochetsbyonyee" target="_blank"
+                    rel="noopener">Crochets by On-Yee</a></h3>
+                <p>A modern ecommerce website for handmade crochet creations.</p>
+                <ul class="tags">
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>Supabase</li>
+                </ul>
+                <span class="project-preview-hint">Click to preview</span>
               </div>
-            </div>
-          </article>
-
-          <!-- Project 4 -->
-          <article class="project-card">
-            <img src="assets/images/CrochetsbyOnYee.png" alt="Screenshot of Project Two" loading="lazy" />
-            <div class="project-body">
-              <h3>Crochets by On-Yee</h3>
-              <p>A modern ecommerce website for handmade crochet creations.</p>
-              <ul class="tags">
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Supabase</li>
-              </ul>
+            </summary>
+            <div class="project-drawer">
               <div class="project-links">
                 <a href="https://github.com/1110JY/crochetsbyonyee" target="_blank" rel="noopener"
                   class="link">GitHub</a>
               </div>
               <div class="video-embed image-embed">
-                <img src="assets/crochetsbyonyee demo.gif" alt="Project Two Demo" loading="lazy" />
+                <img src="assets/crochetsbyonyee demo.gif" alt="Crochets by On-Yee demo" loading="lazy" />
               </div>
             </div>
-          </article>
+          </details>
+
+
+          <!-- Project 4 -->
+          <details class="project-card">
+            <summary class="project-summary">
+              <img class="project-thumb" src="assets/images/CampusHabitHero.png" alt="Campus Habit Hero cover"
+                loading="lazy" />
+              <div class="project-meta">
+                <h3><a class="project-title-link" href="#projects">Campus Habit Hero</a></h3>
+                <p>A Habit tracker app for campus students.</p>
+                <ul class="tags">
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>MongoDB</li>
+                </ul>
+              </div>
+            </summary>
+          </details>
         </div>
       </div>
     </section>
 
 
     <!-- Experience -->
-    <section id="experience" class="section experience" aria-label="Experience">
+    <section id="experience" class="section experience fade-in" aria-label="Experience">
       <div class="container">
         <h2>Experience</h2>
-        <div class="experience-list">
-
-          <article class="experience-item">
-            <header>
-              <h3>Team Project • Full-Stack Web App</h3>
-              <span class="meta">Glasgow Caledonian University • 2023 – 2024</span>
-            </header>
-            <ul>
-              <li>Designed and developed a full-stack web application using React, Node.js, and MongoDB.</li>
-              <li>Collaborated in a team of 5 using Agile practices, conducting code reviews and sprint planning.</li>
-              <li>Implemented CI/CD pipelines and automated testing.</li>
-              <li>Led task planning and weekly stand-ups for a student well-being app</li>
-              <li>Built using MERN stack (React, Node, MongoDB, Express)</li>
-              <li>Implemented CI/CD pipelines and automated testing with Jest, reducing manual testing effort by 30%.
-              </li>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <div class="experience-head">
+              <div>
+                <p class="experience-kicker">Team Project</p>
+                <h3>Full-Stack Web App</h3>
+              </div>
+              <div class="experience-meta">
+                <span>Glasgow Caledonian University</span>
+                <span>2023 - 2024</span>
+              </div>
+            </div>
+            <ul class="experience-points">
+              <li>Designed and shipped a MERN-based web app with React, Node, Express, and MongoDB.</li>
+              <li>Led sprint planning, code reviews, and stand-ups for a 5-person team.</li>
+              <li>Built CI/CD and automated testing (Jest), cutting manual testing by ~30%.</li>
             </ul>
+            <div class="experience-tags">
+              <span>MERN</span>
+              <span>Agile</span>
+              <span>CI/CD</span>
+              <span>Testing</span>
+            </div>
           </article>
         </div>
       </div>
@@ -377,24 +336,17 @@
 
 
     <!-- Education Journey -->
-    <section id="education" class="section education" aria-label="Education Journey">
+    <section id="education" class="section education fade-in" aria-label="Education Journey">
       <div class="container">
         <h2>Education Journey</h2>
-        <p class="section-intro">A visual timeline of my academic progression — from earliest studies to most recent
+        <p class="section-intro">A visual timeline of my academic progression - from earliest studies to most recent
           qualifications.</p>
 
         <div class="timeline" aria-hidden="false">
           <!-- College -->
           <div class="timeline-item">
             <div class="timeline-left">
-              <div class="edu-logo" aria-hidden="false">
-                <!-- Simple building / college icon -->
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 11v7a1 1 0 001 1h3v-6h8v6h3a1 1 0 001-1v-7L12 6 3 11z" fill="currentColor" />
-                  <path d="M7 12h2v2H7v-2zm-1 4h2v2H6v-2zM11 12h2v2h-2v-2z" fill="currentColor" />
-                </svg>
-              </div>
+              <div class="edu-logo" aria-hidden="false">HND</div>
             </div>
             <div class="timeline-center">
               <span class="timeline-dot" aria-hidden="true"></span>
@@ -402,22 +354,15 @@
             </div>
             <div class="timeline-content">
               <h3>Glasgow Clyde College (Further Education)</h3>
-              <p class="degree">Higher National Diploma — Software Development</p>
-              <p class="meta">Achievements: Distinction • 2022 - 2023</p>
+              <p class="degree">Higher National Diploma - Software Development</p>
+              <p class="meta">Achievements: A | 2022 - 2023</p>
             </div>
           </div>
 
           <!-- University -->
           <div class="timeline-item">
             <div class="timeline-left">
-              <div class="edu-logo" aria-hidden="false">
-                <!-- University / institutional icon -->
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 3L2 7v4c0 5 4 9 10 9s10-4 10-9V7l-10-4z" fill="currentColor" />
-                  <path d="M11 14h2v2h-2v-2z" fill="currentColor" />
-                </svg>
-              </div>
+              <div class="edu-logo" aria-hidden="false">BSc</div>
             </div>
             <div class="timeline-center">
               <span class="timeline-dot" aria-hidden="true"></span>
@@ -426,7 +371,7 @@
             <div class="timeline-content">
               <h3>Glasgow Caledonian University</h3>
               <p class="degree">BSc (Hons) Computing</p>
-              <p class="meta">Grade: 2:1 • 2023 — 2025</p>
+              <p class="meta">Grade: 2:1 | 2023 - 2025</p>
             </div>
           </div>
         </div>
@@ -434,7 +379,7 @@
     </section>
 
     <!-- CV -->
-    <section id="cv" class="section cv" aria-label="Curriculum Vitae">
+    <section id="cv" class="section cv fade-in" aria-label="Curriculum Vitae">
       <div class="container cv-inner">
         <div class="cv-content">
           <h2>CV</h2>
@@ -448,7 +393,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section contact" aria-label="Contact">
+    <section id="contact" class="section contact fade-in" aria-label="Contact">
       <div class="container contact-inner" data-emailjs-public-key="IYBxU194nUPugzGjK"
         data-emailjs-service-id="service_q0prba6" data-emailjs-template-id="template_f8b44is">
         <h2>Contact</h2>
@@ -507,11 +452,11 @@
         <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </nav>
-      <p class="copyright">© <span id="year"></span> Josh Yeung. All rights reserved.</p>
+      <p class="copyright">(c) <span id="year"></span> Josh Yeung. All rights reserved.</p>
     </div>
 
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
-      ↑
+      <img src="assets/arrow.svg" alt="" aria-hidden="true" />
     </button>
   </footer>
 
