@@ -1149,7 +1149,9 @@ input::placeholder, textarea::placeholder {
   }
   .corner-tr, .corner-br { align-items: flex-start; }
   .corner-nav { justify-content: flex-start; }
-  .hero-center { width: min(480px, 85vw); align-self: center; }
+  .corner-container { position: static; display: flex; flex-direction: column; gap: 8px; }
+  .hero-scroll { position: static; transform: none; margin-top: 8px; text-align: left; }
+  .hero-center { width: min(500px, 90vw); align-self: center; }
   .about-inner { grid-template-columns: 1fr; }
 
 }
@@ -1197,8 +1199,57 @@ input::placeholder, textarea::placeholder {
     .contact { padding-block: 100px; }
 
   /* Card stack mobile adjustments */
-  .hero-center { width: min(420px, 92vw); }
-  .corner { font-size: 0.72rem; }
+  .hero-grid {
+    align-items: center;
+    padding-inline: 20px;
+    gap: 14px;
+  }
+  .corner { font-size: 0.72rem; align-items: center; text-align: center; position: static; gap: 4px; }
+  .corner-nav { justify-content: center; }
+  .corner-container { position: static; align-items: center; gap: 10px; width: 100%; pointer-events: auto; }
+  .corner-top { 
+    position: static;
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 6px; 
+    padding: 30px 12px; 
+    background: transparent; 
+  }
+  .corner-bottom { 
+    position: static;
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 12px; 
+    row-gap: 8px;
+    padding: 6px 10px; 
+    margin-top: 120px; 
+    background: transparent;
+  }
+  .corner-bl, .corner-br { flex: 1 1 45%; align-items: flex-start; text-align: left; }
+  .corner-br { text-align: right; align-items: flex-end; }
+  .corner-bottom .hero-scroll { 
+    order: -1; 
+    flex: 1 1 100%; 
+    text-align: center; 
+    margin: 12px auto 10px; 
+  }
+  .corner-links { justify-content: center; gap: 10px; }
+  .corner-meta { text-align: center; width: 100%; }
+  .corner-meta.availability { display: none; }
+  .hero-grid { display: flex; flex-direction: column; align-items: center; gap: 18px; padding-inline: 16px; }
+  .hero-center { width: 100%; max-width: 420px; margin-inline: auto; }
+  .hero-core { text-align: center; gap: 8px; }
+  .hero-title { font-size: clamp(2.4rem, 9vw, 3.4rem); }
+  .hero-subtext { margin: 0 auto 12px; max-width: 36ch; }
+  .hero-scroll { text-align: center; margin-top: 12px; position: static; transform: none; width: 100%; }
+  .hero { padding-top: clamp(80px, 12vw, 140px); padding-bottom: clamp(70px, 10vw, 120px); }
+  .corner-tl .corner-label { display: none; }
 
   .contact-social {
     flex-direction: column;
