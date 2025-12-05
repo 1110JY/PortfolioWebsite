@@ -8,6 +8,7 @@
   const formStatus = document.getElementById('formStatus');
   const heroScroll = document.querySelector('.hero-scroll');
   const fadeItems = document.querySelectorAll('.fade-in');
+  const lastUpdated = document.querySelector('.corner-tc');
 
   // Year
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -283,6 +284,13 @@
       const y = Math.min(Math.max(window.scrollY, 0), fadeEnd);
       const opacity = 1 - y / fadeEnd;
       heroScroll.style.opacity = opacity.toFixed(2);
+    }
+
+    if (lastUpdated) {
+      const fadeEnd = 300;
+      const y = Math.min(Math.max(window.scrollY, 0), fadeEnd);
+      const opacity = 1 - y / fadeEnd;
+      lastUpdated.style.opacity = opacity.toFixed(2);
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
