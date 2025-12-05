@@ -391,6 +391,14 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-text);
 }
 
+/* Tighter header for medium screens */
+@media (max-width: 1180px) {
+  .corner-nav { gap: 6px; justify-content: flex-end; }
+  .corner-nav a { font-size: 0.82rem; letter-spacing: 0.04em; }
+  .corner { max-width: 240px; }
+  .corner-label { letter-spacing: 0.08em; }
+}
+
 .hero-visual { 
   position: relative; 
   display: flex;
