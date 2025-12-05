@@ -217,7 +217,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 
-.corner {
+.corner { 
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -234,6 +234,7 @@ a { color: inherit; text-decoration: none; }
 
 .corner-tl { top: clamp(10px, 3vw, 24px); left: clamp(20px, 6vw, 60px); }
 .corner-tr { top: clamp(10px, 3vw, 24px); right: clamp(20px, 6vw, 60px); text-align: right; align-items: flex-end; }
+.corner-tc { top: clamp(10px, 3vw, 24px); left: 50%; transform: translateX(-50%); text-align: center; align-items: center; }
 .corner-bl { bottom: clamp(10px, 3vw, 24px); left: clamp(20px, 6vw, 60px); }
 .corner-br { bottom: clamp(10px, 3vw, 24px); right: clamp(20px, 6vw, 60px); text-align: right; align-items: flex-end; }
 
@@ -1147,6 +1148,7 @@ input::placeholder, textarea::placeholder {
     align-items: flex-start; 
     text-align: left; 
   }
+  .corner-tc { display: none; }
   .corner-tr, .corner-br { align-items: flex-start; }
   .corner-nav { justify-content: flex-start; }
   .corner-container { position: static; display: flex; flex-direction: column; gap: 8px; }
