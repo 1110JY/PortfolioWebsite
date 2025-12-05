@@ -217,7 +217,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 
-.corner { 
+.corner {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -228,6 +228,10 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.08em;
   font-size: 0.75rem;
   z-index: 1000;
+}
+
+.corner p {
+  margin: 0;
 }
 
 .corner a { color: var(--color-text); }
@@ -1154,7 +1158,8 @@ input::placeholder, textarea::placeholder {
   }
   .corner-tc { display: none; }
   .corner-tr, .corner-br { align-items: flex-start; }
-  .corner-nav { justify-content: flex-start; }
+  .corner-nav { justify-content: flex-start; gap: 8px; }
+  .corner-nav a { font-size: 0.85rem; }
   .corner-container { position: static; display: flex; flex-direction: column; gap: 8px; }
   .hero-scroll { position: static; transform: none; margin-top: 8px; text-align: left; }
   .hero-center { width: min(500px, 90vw); align-self: center; }
