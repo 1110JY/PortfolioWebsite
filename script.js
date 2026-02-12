@@ -313,6 +313,79 @@
     fadeItems.forEach(el => fadeObserver.observe(el));
   }
 
+  // Project case study dialog
+  const projectCaseStudyDialog = document.getElementById('projectCaseStudyDialog');
+  const projectCaseStudyButtons = document.querySelectorAll('[data-project-dialog]');
+
+  if (projectCaseStudyDialog && projectCaseStudyButtons.length) {
+    const dialogTitle = projectCaseStudyDialog.querySelector('[data-project-dialog-title]');
+    const dialogBody = projectCaseStudyDialog.querySelector('[data-project-dialog-body]');
+    const dialogCloseButtons = projectCaseStudyDialog.querySelectorAll('[data-project-dialog-close]');
+    let lastTrigger = null;
+
+    const closeProjectDialog = () => {
+      if (!projectCaseStudyDialog.open) return;
+      if (typeof projectCaseStudyDialog.close === 'function') {
+        projectCaseStudyDialog.close();
+      } else {
+        projectCaseStudyDialog.removeAttribute('open');
+        projectCaseStudyDialog.dispatchEvent(new Event('close'));
+      }
+    };
+
+    const openProjectDialog = (button) => {
+      const key = button.getAttribute('data-project-dialog');
+      if (!key || !dialogBody || !dialogTitle) return;
+
+      const template = document.getElementById(`case-study-${key}`);
+      if (!template || !('content' in template)) return;
+
+      dialogBody.innerHTML = '';
+      dialogBody.appendChild(template.content.cloneNode(true));
+      dialogTitle.textContent = button.getAttribute('data-project-title') || 'Project case study';
+
+      lastTrigger = button;
+      document.body.classList.add('project-dialog-open');
+      if (projectCaseStudyDialog.open) closeProjectDialog();
+      if (typeof projectCaseStudyDialog.showModal === 'function') {
+        projectCaseStudyDialog.showModal();
+      } else {
+        projectCaseStudyDialog.setAttribute('open', '');
+      }
+    };
+
+    projectCaseStudyButtons.forEach((button) => {
+      button.addEventListener('click', () => openProjectDialog(button));
+    });
+
+    dialogCloseButtons.forEach((button) => {
+      button.addEventListener('click', closeProjectDialog);
+    });
+
+    projectCaseStudyDialog.addEventListener('click', (event) => {
+      const rect = projectCaseStudyDialog.getBoundingClientRect();
+      const clickedOutside =
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom;
+
+      if (clickedOutside) closeProjectDialog();
+    });
+
+    projectCaseStudyDialog.addEventListener('close', () => {
+      document.body.classList.remove('project-dialog-open');
+      if (dialogBody) dialogBody.innerHTML = '';
+      if (lastTrigger) lastTrigger.focus();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && projectCaseStudyDialog.open) {
+        closeProjectDialog();
+      }
+    });
+  }
+
   // Contact form validation + EmailJS
   function setError(id, message) {
     const el = document.getElementById(`error-${id}`);

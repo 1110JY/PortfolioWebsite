@@ -816,12 +816,15 @@ a { color: inherit; text-decoration: none; }
   display: flex; 
   gap: 12px; 
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .project-links .link { 
   color: var(--color-accent); 
   font-weight: 700; 
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
   font-size: 0.9rem;
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
@@ -829,6 +832,30 @@ a { color: inherit; text-decoration: none; }
 
 .project-links .link:hover {
   color: var(--color-accent-hover);
+}
+
+.project-case-study-btn {
+  border: 1px solid var(--color-text);
+  background: var(--color-text);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-case-study-btn:hover,
+.project-case-study-btn:focus-visible {
+  transform: translateY(-1px);
+  background: #1e1e1e;
+  border-color: #1e1e1e;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.28);
+  outline: none;
 }
 
 .project-drawer .video-embed { 
@@ -843,6 +870,122 @@ a { color: inherit; text-decoration: none; }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
 .video-embed.image-embed { padding-top: 0; aspect-ratio: 16/9; background: #000; }
 .video-embed.image-embed img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+body.project-dialog-open {
+  overflow: hidden;
+}
+
+.project-dialog {
+  width: min(900px, calc(100vw - 2rem));
+  max-height: min(88svh, 850px);
+  margin: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 0;
+  background: #ffffff;
+  color: var(--color-text);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
+}
+
+.project-dialog::backdrop {
+  background: rgba(5, 5, 5, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.project-dialog-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  max-height: min(88svh, 850px);
+}
+
+.project-dialog-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.project-dialog-head h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.project-dialog-close {
+  border: 1px solid var(--color-border);
+  background: #f8f8f8;
+  color: var(--color-text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.project-dialog-close:hover,
+.project-dialog-close:focus-visible {
+  background: #f0f0f0;
+  outline: none;
+}
+
+.project-dialog-content {
+  overflow-y: auto;
+  padding: clamp(16px, 2.4vw, 24px);
+  display: grid;
+  gap: 18px;
+  line-height: 1.7;
+}
+
+.case-study-article {
+  display: grid;
+  gap: 18px;
+}
+
+.case-study-lead {
+  margin: 0;
+  font-size: 1.04rem;
+  color: var(--color-text-secondary);
+}
+
+.case-study-block {
+  display: grid;
+  gap: 10px;
+}
+
+.case-study-block h4 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.case-study-block p {
+  margin: 0;
+}
+
+.case-study-list {
+  margin: 0;
+  padding-left: 22px;
+  list-style: disc;
+  list-style-position: outside;
+}
+
+.case-study-list li {
+  display: list-item;
+  color: var(--color-text-secondary);
+}
+
+.case-study-list li + li {
+  margin-top: 4px;
+}
+
+.case-study-list li::marker {
+  color: var(--color-text);
+}
 
 /* Experience */
 .experience-grid { 
@@ -1379,6 +1522,29 @@ input::placeholder, textarea::placeholder {
   .cv-actions .btn {
     width: 100%;
     max-width: 280px;
+  }
+
+  .project-dialog {
+    width: calc(100vw - 1rem);
+    max-height: 90svh;
+  }
+
+  .project-dialog-panel {
+    max-height: 90svh;
+  }
+
+  .project-dialog-head {
+    padding: 12px 14px;
+  }
+
+  .project-dialog-content {
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .project-case-study-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 

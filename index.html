@@ -46,7 +46,7 @@
       <p class="corner-meta">Full Stack Developer</p>
     </div>
     <div class="corner corner-tc">
-      <p class="corner-meta">Last updated: 05 Dec 2025</p>
+      <p class="corner-meta">Last updated: 12 Feb 2026</p>
     </div>
     <div class="corner corner-tr">
       <nav class="corner-nav" aria-label="Primary">
@@ -64,11 +64,11 @@
     <section id="home" class="section hero" aria-label="Introduction">
       <div class="container hero-grid">
         <div class="hero-center">
-            <div class="hero-core">
-              <p class="hero-title">Josh Yeung</p>
-              <p class="hero-subline">Pragmatic, product-minded engineering.</p>
-              <p class="hero-subtext">I build fast, resilient web experiences with React, TypeScript, and Node.</p>
-            </div>
+          <div class="hero-core">
+            <p class="hero-title">Josh Yeung</p>
+            <p class="hero-subline">Pragmatic, product-minded engineering.</p>
+            <p class="hero-subtext">I build fast, resilient web experiences with React, TypeScript, and Node.</p>
+          </div>
         </div>
         <div class="corner-container corner-bottom">
           <div class="corner corner-bl">
@@ -76,7 +76,8 @@
             <div class="corner-links">
               <a class="link-inline" href="https://github.com/1110JY" target="_blank" rel="noopener">GitHub</a>
               <span class="dot">&middot;</span>
-              <a class="link-inline" href="http://www.linkedin.com/in/josh-yeung2908" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="link-inline" href="http://www.linkedin.com/in/josh-yeung2908" target="_blank"
+                rel="noopener">LinkedIn</a>
             </div>
           </div>
           <div class="corner corner-br">
@@ -218,6 +219,10 @@
               <div class="project-links">
                 <a href="https://github.com/1110JY/BadmintonBuddyV2.git" target="_blank" rel="noopener"
                   class="link">GitHub</a>
+                <button class="project-case-study-btn" type="button" data-project-dialog="badminton-buddy"
+                  data-project-title="Badminton Buddy" aria-haspopup="dialog">
+                  Read case study
+                </button>
               </div>
               <div class="video-embed image-embed">
                 <img src="assets/BadmintonBuddyDemo.gif" alt="Badminton Buddy demo" loading="lazy" />
@@ -246,6 +251,10 @@
               <div class="project-links">
                 <a href="https://github.com/1110JY/FridgeToFeast/tree/master" target="_blank" rel="noopener"
                   class="link">GitHub</a>
+                <button class="project-case-study-btn" type="button" data-project-dialog="fridge-to-feast"
+                  data-project-title="Fridge to Feast" aria-haspopup="dialog">
+                  Read case study
+                </button>
               </div>
               <div class="video-embed image-embed">
                 <img src="assets/FridgetoFeast.gif" alt="Fridge to Feast demo" loading="lazy" />
@@ -274,6 +283,10 @@
               <div class="project-links">
                 <a href="https://github.com/1110JY/crochetsbyonyee" target="_blank" rel="noopener"
                   class="link">GitHub</a>
+                <button class="project-case-study-btn" type="button" data-project-dialog="crochets-by-on-yee"
+                  data-project-title="Crochets by On Yee" aria-haspopup="dialog">
+                  Read case study
+                </button>
               </div>
               <div class="video-embed image-embed">
                 <img src="assets/crochetsbyonyee demo.gif" alt="Crochets by On-Yee demo" loading="lazy" />
@@ -301,6 +314,340 @@
         </div>
       </div>
     </section>
+
+    <dialog id="projectCaseStudyDialog" class="project-dialog" aria-labelledby="projectCaseStudyTitle">
+      <div class="project-dialog-panel">
+        <header class="project-dialog-head">
+          <h3 id="projectCaseStudyTitle" data-project-dialog-title>Project case study</h3>
+          <button type="button" class="project-dialog-close" data-project-dialog-close aria-label="Close dialog">
+            Close
+          </button>
+        </header>
+        <div class="project-dialog-content" data-project-dialog-body></div>
+      </div>
+    </dialog>
+
+    <template id="case-study-badminton-buddy">
+      <article class="case-study-article">
+        <p class="case-study-lead">A real-time session tracker designed to improve competitive recreational play.</p>
+
+        <section class="case-study-block" aria-label="Why I built it">
+          <h4>Why I Built It</h4>
+          <p>I play badminton every Sunday and actively work on improving my performance. Tracking improvement was easy
+            in some ways, either by reviewing recordings or by sensing whether I was winning more consistently.</p>
+          <p>What was missing was structured data.</p>
+          <p>We had no reliable way to:</p>
+          <ul class="case-study-list">
+            <li>Track scores across multiple games</li>
+            <li>Measure win rates over a session</li>
+            <li>Ensure fair rotations</li>
+            <li>Avoid repeated pairings</li>
+            <li>Guarantee equal game time for all players</li>
+          </ul>
+          <p>Using notes quickly became inconsistent and impractical mid-session, so I built Badminton Buddy.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="The problem">
+          <h4>The Problem</h4>
+          <p>Recreational sports groups often rely on manual coordination. With 4-8 players rotating in doubles,
+            pairings become repetitive, court time can become uneven, win tracking becomes inconsistent, and performance
+            insights are lost after the session.</p>
+          <p>There was no lightweight tool built specifically for this workflow.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="The solution">
+          <h4>The Solution</h4>
+          <p>Badminton Buddy is a web-based session tracker that:</p>
+          <ul class="case-study-list">
+            <li>Generates dynamic player pairings</li>
+            <li>Tracks live game scores</li>
+            <li>Calculates win rates and performance averages</li>
+            <li>Identifies highest-performing pairs</li>
+            <li>Ensures balanced participation</li>
+            <li>Persists real-time session data with Supabase</li>
+          </ul>
+          <p>It is optimized for mobile usage so it can be used directly courtside without friction.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Technical stack">
+          <h4>Technical Stack</h4>
+          <ul class="case-study-list">
+            <li>React with functional components and Hooks</li>
+            <li>Supabase with PostgreSQL for persistent, authentication-ready backend services</li>
+            <li>State management with derived calculations</li>
+            <li>Real-time session data persistence</li>
+            <li>Custom pairing generation algorithm</li>
+            <li>Dynamic stat computation</li>
+            <li>Responsive, mobile-first UI</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="Key engineering decisions">
+          <h4>Engineering Decisions</h4>
+          <p><strong>Backend and data storage:</strong> I initially considered local storage but transitioned to
+            Supabase to persist player and session history across devices, prepare for shared sessions, enable scalable
+            relational modeling in PostgreSQL, and separate frontend state from long-term storage.</p>
+          <p>Using Supabase gave me a cleaner data model for:</p>
+          <ul class="case-study-list">
+            <li>Players</li>
+            <li>Sessions</li>
+            <li>Games</li>
+            <li>Pairings</li>
+            <li>Match results</li>
+          </ul>
+          <p>This also created a stronger foundation for historical performance tracking, real-time collaboration, and
+            authenticated user accounts.</p>
+          <p><strong>Custom pairing logic:</strong> simple randomization leads to repeated teams, so I implemented
+            pairing constraints to reduce duplication and improve fairness.</p>
+          <p><strong>Derived stat computation:</strong> calculated stats are computed from canonical session data to
+            reduce state complexity and keep metrics consistent.</p>
+          <p><strong>Mobile-first design:</strong> sessions happen in fast-paced environments, so the UI prioritizes
+            large touch targets, quick score input, minimal clutter, and clear stat visibility.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Trade offs and improvements">
+          <h4>Trade-offs and Improvements</h4>
+          <p>Current limitations:</p>
+          <ul class="case-study-list">
+            <li>Pairing fairness logic can still be improved using more advanced constraint-based algorithms</li>
+            <li>Real-time collaboration is planned but not fully implemented</li>
+            <li>UI optimizations for larger session groups (8+ players) can be improved</li>
+          </ul>
+          <p>Future improvements:</p>
+          <ul class="case-study-list">
+            <li>Implement Supabase real-time subscriptions for live multiplayer sessions</li>
+            <li>Introduce aggregated performance dashboards across sessions</li>
+            <li>Optimize pairing logic using weighted fairness scoring</li>
+          </ul>
+        </section>
+      </article>
+    </template>
+
+    <template id="case-study-fridge-to-feast">
+      <article class="case-study-article">
+        <p class="case-study-lead">A smart ingredient-based recipe discovery platform.</p>
+
+        <section class="case-study-block" aria-label="Why I built it">
+          <h4>Why I Built It</h4>
+          <p>Most recipe platforms assume users start with a dish in mind.</p>
+          <p>In reality, people often start with ingredients.</p>
+          <p>I wanted to build a system that flips that interaction model: instead of searching for recipes, users
+            select what they already have and the system generates viable meal options.</p>
+          <p>It became both a UX problem and a matching logic problem.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="The problem">
+          <h4>The Problem</h4>
+          <p>Users frequently:</p>
+          <ul class="case-study-list">
+            <li>Have incomplete ingredient sets</li>
+            <li>Do not know what they can make</li>
+            <li>Want healthy or culturally specific meals</li>
+            <li>Feel overwhelmed by generic recipe search results</li>
+          </ul>
+          <p>Traditional search is keyword-based. What is needed is ingredient-based matching with filtering.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="The challenge">
+          <h4>The Challenge</h4>
+          <ul class="case-study-list">
+            <li>Handling partial ingredient matches</li>
+            <li>Ranking recipes by relevance</li>
+            <li>Managing asynchronous API data</li>
+            <li>Designing a UI that avoids clutter despite many filters</li>
+            <li>Handling edge cases such as empty results, slow API responses, and invalid ingredient combinations</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="The solution">
+          <h4>The Solution</h4>
+          <p>Fridge to Feast is a web-based recipe generation platform that:</p>
+          <ul class="case-study-list">
+            <li>Allows users to select ingredients by category</li>
+            <li>Integrates with an external recipe API</li>
+            <li>Ranks recipes based on ingredient match percentage</li>
+            <li>Displays nutritional data and metadata</li>
+            <li>Supports filtering for dietary preferences</li>
+            <li>Uses loading states and structured UI to maintain clarity</li>
+          </ul>
+          <p>The system prioritizes recipes with higher ingredient overlap, helping users make practical decisions with
+            what they already have.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Technical stack">
+          <h4>Technical Stack</h4>
+          <ul class="case-study-list">
+            <li>React with component-driven architecture</li>
+            <li>External recipe API integration</li>
+            <li>Asynchronous data fetching with error handling</li>
+            <li>Dynamic ingredient matching logic</li>
+            <li>Conditional rendering for filters and result states</li>
+            <li>Structured UI layout for categorized ingredient selection</li>
+            <li>Optimized loading states for better perceived performance</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="Key engineering decisions">
+          <h4>Key Engineering Decisions</h4>
+          <p><strong>Ingredient categorization:</strong> instead of a flat ingredient input field, I structured
+            ingredients into logical groups such as proteins, vegetables, and spices. This improves usability and
+            reduces input ambiguity.</p>
+          <p><strong>Match scoring logic:</strong> rather than simply filtering recipes that include selected
+            ingredients, I implemented a match-percentage system to rank recipes by relevance, prioritize higher
+            overlap, and avoid strict all-or-nothing filtering.</p>
+          <p><strong>UI architecture:</strong> I separated input state (selected ingredients), filter state (dietary
+            constraints), and result state (API responses). This prevents tightly coupled state updates and improves
+            maintainability.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Trade offs and improvements">
+          <h4>Trade-offs and Improvements</h4>
+          <p>Current limitations:</p>
+          <ul class="case-study-list">
+            <li>Reliant on third-party API performance and rate limits</li>
+            <li>Match logic could be enhanced with weighted ingredient scoring</li>
+            <li>No persistent user profiles yet</li>
+          </ul>
+          <p>If scaling this product:</p>
+          <ul class="case-study-list">
+            <li>I would cache API results server-side</li>
+            <li>Introduce user accounts with saved preferences</li>
+            <li>Implement AI-assisted ingredient substitution suggestions</li>
+            <li>Add nutritional scoring dashboards</li>
+          </ul>
+        </section>
+      </article>
+    </template>
+
+    <template id="case-study-crochets-by-on-yee">
+      <article class="case-study-article">
+        <p class="case-study-lead">A full-stack e-commerce rebuild for a small creative business.</p>
+
+        <section class="case-study-block" aria-label="Overview">
+          <h4>Overview</h4>
+          <p>Crochets by On Yee is a small independent crochet brand. The original website felt visually outdated,
+            difficult to navigate, and lacked modern e-commerce standards.</p>
+          <p>The products were strong. The digital experience was not.</p>
+          <p>I rebuilt the platform from the ground up as a full-stack e-commerce system focused on usability,
+            scalability, and business practicality.</p>
+          <p>This was my most technically demanding project to date.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="The initial problem">
+          <h4>The Initial Problem</h4>
+          <p>The previous site suffered from:</p>
+          <ul class="case-study-list">
+            <li>Inconsistent UI hierarchy</li>
+            <li>Limited mobile optimisation</li>
+            <li>No structured product management system</li>
+            <li>Friction in the checkout flow</li>
+            <li>Weak trust signals for online payments</li>
+          </ul>
+          <p>For a small business, this directly affects customer confidence and sales conversion.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Client collaboration and requirement gathering">
+          <h4>Client Collaboration and Requirement Gathering</h4>
+          <p>Before writing code, I worked closely with the business owner to understand:</p>
+          <ul class="case-study-list">
+            <li>Their preferred visual direction</li>
+            <li>Pain points with the existing site</li>
+            <li>Required e-commerce features</li>
+            <li>How they wanted to manage products long-term</li>
+            <li>Concerns around payment security and order handling</li>
+          </ul>
+          <p>Rather than redesigning based on assumptions, I translated client needs into technical architecture
+            decisions.</p>
+          <p>Several layout and styling decisions were refined through feedback cycles to ensure the final product
+            aligned with the brand identity.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="The solution">
+          <h4>The Solution</h4>
+          <p>I rebuilt the website as a modern, production-ready e-commerce platform that includes:</p>
+          <ul class="case-study-list">
+            <li>Structured product pages with clear metadata</li>
+            <li>Dynamic cart functionality</li>
+            <li>Secure Stripe payment integration</li>
+            <li>Supabase-powered database storage</li>
+            <li>Custom CMS/admin dashboard for product management</li>
+            <li>Fully responsive mobile-first design</li>
+          </ul>
+          <p>The result is a scalable storefront that balances aesthetic appeal with commercial reliability.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Technical architecture">
+          <h4>Technical Architecture</h4>
+          <p><strong>Frontend</strong></p>
+          <ul class="case-study-list">
+            <li>React / Next.js</li>
+            <li>Component-based architecture</li>
+            <li>Responsive layout system</li>
+            <li>Conditional rendering for checkout states</li>
+            <li>Cart state management</li>
+          </ul>
+          <p><strong>Backend and data</strong></p>
+          <ul class="case-study-list">
+            <li>Supabase with PostgreSQL</li>
+            <li>Product storage</li>
+            <li>Order records</li>
+            <li>Structured relational data modelling</li>
+            <li>Server-side integration for secure operations</li>
+          </ul>
+          <p><strong>Payments</strong></p>
+          <ul class="case-study-list">
+            <li>Stripe integration</li>
+            <li>Secure checkout handling</li>
+            <li>Payment confirmation logic</li>
+            <li>Order recording after successful transactions</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="Admin and cms system">
+          <h4>Admin and CMS System</h4>
+          <p>I built a custom admin panel that allows the client to:</p>
+          <ul class="case-study-list">
+            <li>Add new products</li>
+            <li>Edit pricing and descriptions</li>
+            <li>Manage inventory details</li>
+            <li>Update product images</li>
+          </ul>
+          <p>This removes the need for developer intervention for everyday business operations.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Key engineering decisions">
+          <h4>Key Engineering Decisions</h4>
+          <p><strong>Supabase instead of static data:</strong> rather than hardcoding products, I implemented a
+            relational database structure so the platform could scale and handle real order records.</p>
+          <p><strong>Custom CMS instead of third-party builder:</strong> instead of relying on a website builder or
+            external CMS, I built an internal admin dashboard tailored to the client's needs. This ensured flexibility
+            and tighter integration with the product database.</p>
+          <p><strong>Secure payment flow with Stripe:</strong> payments are processed securely through Stripe, with
+            backend validation before recording orders in Supabase. This ensures transactional reliability and data
+            consistency.</p>
+          <p><strong>Mobile-first UX:</strong> small business traffic is predominantly mobile. Layouts were designed
+            with clear visual hierarchy, large touch targets, simplified checkout flow, and minimal friction between
+            browsing and purchase.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Trade offs and future improvements">
+          <h4>Trade-offs and Future Improvements</h4>
+          <p>Current limitations:</p>
+          <ul class="case-study-list">
+            <li>No automated email notifications system yet</li>
+            <li>Inventory quantities could be enhanced with real-time stock reduction logic</li>
+            <li>Analytics tracking can be expanded</li>
+          </ul>
+          <p>Future enhancements could include:</p>
+          <ul class="case-study-list">
+            <li>Sales dashboards within the admin panel</li>
+            <li>Order status management</li>
+            <li>Customer account system</li>
+            <li>Shipping rate automation by region</li>
+          </ul>
+        </section>
+      </article>
+    </template>
 
 
     <!-- Experience -->
