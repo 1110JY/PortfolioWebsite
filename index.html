@@ -193,124 +193,143 @@
 
     <!-- Projects -->
     <section id="projects" class="section projects fade-in" aria-label="Projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="project-grid">
-          <!-- Project 1 -->
-          <details class="project-card">
-            <summary class="project-summary">
-              <img class="project-thumb" src="assets/images/BadmintonBuddy.png" alt="Badminton Buddy cover"
-                loading="lazy" />
-              <div class="project-meta">
-                <h3><a class="project-title-link" href="https://badminton-buddyxyz.vercel.app/" target="_blank"
-                    rel="noopener">Badminton Buddy</a></h3>
-                <p>Badminton Stats Tracker</p>
-                <ul class="tags">
-                  <li>React</li>
-                  <li>TypeScript</li>
-                  <li>Next.js</li>
-                  <li>Supabase</li>
-                  <li>Vercel</li>
-                </ul>
-                <span class="project-preview-hint">Click to preview</span>
-              </div>
-            </summary>
-            <div class="project-drawer">
-              <div class="project-links">
-                <a href="https://github.com/1110JY/BadmintonBuddyV2.git" target="_blank" rel="noopener"
-                  class="link">GitHub</a>
-                <button class="project-case-study-btn" type="button" data-project-dialog="badminton-buddy"
-                  data-project-title="Badminton Buddy" aria-haspopup="dialog">
-                  Read case study
+      <div class="container projects-shell">
+        <header class="projects-header">
+          <h2>Projects</h2>
+          <p class="projects-intro">Selected product-led builds focused on usability, clarity, and engineering quality.</p>
+          <span class="projects-accent-line" aria-hidden="true"></span>
+        </header>
+
+        <article class="project-featured-card">
+          <a class="project-featured-media" href="https://badminton-buddyxyz.vercel.app/" target="_blank" rel="noopener">
+            <img src="assets/BadmintonBuddyDemo.gif" alt="Badminton Buddy live session tracking interface" loading="lazy" />
+          </a>
+          <div class="project-featured-content">
+            <p class="project-kicker">Featured</p>
+            <h3>Badminton Buddy</h3>
+            <p>A real-time badminton session tracker with live scoring, pairing logic and advanced player statistics.</p>
+            <ul class="tags project-tech-list">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Next.js</li>
+              <li>Supabase</li>
+              <li>Vercel</li>
+            </ul>
+            <div class="project-actions">
+              <a class="btn btn-primary" href="https://badminton-buddyxyz.vercel.app/" target="_blank" rel="noopener">View Live</a>
+              <a class="btn btn-outline" href="https://github.com/1110JY/BadmintonBuddyV2.git" target="_blank" rel="noopener">GitHub</a>
+              <button class="project-inline-case-study" type="button" data-project-dialog="badminton-buddy"
+                data-project-title="Badminton Buddy" aria-haspopup="dialog">
+                Read Case Study
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-secondary-grid">
+          <article class="project-secondary-card">
+            <a class="project-secondary-media" href="https://github.com/1110JY/FridgeToFeast/tree/master" target="_blank"
+              rel="noopener">
+              <img src="assets/FridgetoFeast.gif" alt="Fridge to Feast recipe search interface" loading="lazy" />
+            </a>
+            <div class="project-secondary-content">
+              <h3>Fridge to Feast</h3>
+              <p>Ingredient-first recipe discovery platform with match scoring and dietary filtering.</p>
+              <ul class="tags project-tech-list">
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>Recipe API</li>
+              </ul>
+              <div class="project-secondary-actions">
+                <button class="btn btn-primary project-btn-sm project-btn-disabled" type="button" disabled>
+                  Demo Unavailable
                 </button>
-              </div>
-              <div class="video-embed image-embed">
-                <img src="assets/BadmintonBuddyDemo.gif" alt="Badminton Buddy demo" loading="lazy" />
+                <a class="btn btn-outline project-btn-sm" href="https://github.com/1110JY/FridgeToFeast/tree/master"
+                  target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
-          </details>
+          </article>
 
-          <!-- Project 2 -->
-          <details class="project-card">
-            <summary class="project-summary">
-              <img class="project-thumb" src="assets/images/FridgetoFeast.png" alt="Fridge to Feast cover"
-                loading="lazy" />
-              <div class="project-meta">
-                <h3><a class="project-title-link" href="https://github.com/1110JY/FridgeToFeast/tree/master"
-                    target="_blank" rel="noopener">Fridge to Feast</a></h3>
-                <p>Recipe matcher that minimises waste and maximises flavour.</p>
-                <ul class="tags">
-                  <li>React</li>
-                  <li>Node.js</li>
-                  <li>Express</li>
-                </ul>
-                <span class="project-preview-hint">Click to preview</span>
-              </div>
-            </summary>
-            <div class="project-drawer">
-              <div class="project-links">
-                <a href="https://github.com/1110JY/FridgeToFeast/tree/master" target="_blank" rel="noopener"
-                  class="link">GitHub</a>
-                <button class="project-case-study-btn" type="button" data-project-dialog="fridge-to-feast"
-                  data-project-title="Fridge to Feast" aria-haspopup="dialog">
-                  Read case study
+          <article class="project-secondary-card">
+            <a class="project-secondary-media" href="https://github.com/1110JY/crochetsbyonyee" target="_blank"
+              rel="noopener">
+              <img src="assets/crochetsbyonyee demo.gif" alt="Crochets by On-Yee storefront interface" loading="lazy" />
+            </a>
+            <div class="project-secondary-content">
+              <h3>Crochets by On-Yee</h3>
+              <p>Full-stack ecommerce rebuild with custom CMS, checkout flow, and Supabase-backed product data.</p>
+              <ul class="tags project-tech-list">
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Supabase</li>
+                <li>Stripe</li>
+              </ul>
+              <div class="project-secondary-actions">
+                <button class="btn btn-primary project-btn-sm project-btn-disabled" type="button" disabled>
+                  Demo Unavailable
                 </button>
-              </div>
-              <div class="video-embed image-embed">
-                <img src="assets/FridgetoFeast.gif" alt="Fridge to Feast demo" loading="lazy" />
+                <a class="btn btn-outline project-btn-sm" href="https://github.com/1110JY/crochetsbyonyee" target="_blank"
+                  rel="noopener">GitHub</a>
               </div>
             </div>
-          </details>
+          </article>
+        </div>
 
-          <!-- Project 3 -->
-          <details class="project-card">
-            <summary class="project-summary">
-              <img class="project-thumb" src="assets/images/CrochetsbyOnYee.png" alt="Crochets by On-Yee cover"
-                loading="lazy" />
-              <div class="project-meta">
-                <h3><a class="project-title-link" href="https://github.com/1110JY/crochetsbyonyee" target="_blank"
-                    rel="noopener">Crochets by On-Yee</a></h3>
-                <p>A modern ecommerce website for handmade crochet creations.</p>
-                <ul class="tags">
-                  <li>React</li>
-                  <li>Node.js</li>
-                  <li>Supabase</li>
-                </ul>
-                <span class="project-preview-hint">Click to preview</span>
-              </div>
-            </summary>
-            <div class="project-drawer">
-              <div class="project-links">
-                <a href="https://github.com/1110JY/crochetsbyonyee" target="_blank" rel="noopener"
-                  class="link">GitHub</a>
-                <button class="project-case-study-btn" type="button" data-project-dialog="crochets-by-on-yee"
-                  data-project-title="Crochets by On Yee" aria-haspopup="dialog">
-                  Read case study
+        <div class="projects-subsection">
+          <p class="project-kicker">Other Builds</p>
+          <h3>Other Projects</h3>
+        </div>
+
+        <div class="project-archive-grid">
+          <article class="project-secondary-card project-archive-card">
+            <div class="project-secondary-media">
+              <img src="assets/images/CampusHabitHero.png" alt="Campus Habit Hero interface preview" loading="lazy" />
+            </div>
+            <div class="project-secondary-content">
+              <h3>Campus Habit Hero</h3>
+              <p>Habit-tracking concept for campus students focused on routine, accountability, and goal visibility.</p>
+              <ul class="tags project-tech-list">
+                <li>React</li>
+                <li>Node.js</li>
+                <li>MongoDB</li>
+              </ul>
+              <div class="project-secondary-actions">
+                <button class="btn btn-primary project-btn-sm project-btn-disabled" type="button" disabled>
+                  Demo Unavailable
+                </button>
+                <button class="btn btn-outline project-btn-sm project-btn-disabled" type="button" disabled>
+                  Repo Unavailable
                 </button>
               </div>
-              <div class="video-embed image-embed">
-                <img src="assets/crochetsbyonyee demo.gif" alt="Crochets by On-Yee demo" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="project-secondary-card project-archive-card">
+            <div class="project-secondary-media">
+              <img src="assets/images/DiscordBot.png" alt="NoSpamPls Discord moderation bot interface preview" loading="lazy" />
+            </div>
+            <div class="project-secondary-content">
+              <h3>NoSpamPls Discord Bot</h3>
+              <p>Modular moderation and automation bot with slash commands, workflow controls, and scheduled messaging.</p>
+              <ul class="tags project-tech-list">
+                <li>JavaScript</li>
+                <li>Node.js</li>
+                <li>Discord.js</li>
+                <li>JSON Storage</li>
+              </ul>
+              <div class="project-secondary-actions">
+                <button class="project-inline-case-study project-inline-case-study--small" type="button"
+                  data-project-dialog="discord-moderation-bot" data-project-title="Discord Moderation and Automation Bot"
+                  aria-haspopup="dialog">
+                  Read Case Study
+                </button>
+                <button class="btn btn-outline project-btn-sm project-btn-disabled" type="button" disabled>
+                  Repo Unavailable
+                </button>
               </div>
             </div>
-          </details>
-
-
-          <!-- Project 4 -->
-          <details class="project-card">
-            <summary class="project-summary">
-              <img class="project-thumb" src="assets/images/CampusHabitHero.png" alt="Campus Habit Hero cover"
-                loading="lazy" />
-              <div class="project-meta">
-                <h3><a class="project-title-link" href="#projects">Campus Habit Hero</a></h3>
-                <p>A Habit tracker app for campus students.</p>
-                <ul class="tags">
-                  <li>React</li>
-                  <li>Node.js</li>
-                  <li>MongoDB</li>
-                </ul>
-              </div>
-            </summary>
-          </details>
+          </article>
         </div>
       </div>
     </section>
@@ -644,6 +663,102 @@
             <li>Order status management</li>
             <li>Customer account system</li>
             <li>Shipping rate automation by region</li>
+          </ul>
+        </section>
+      </article>
+    </template>
+
+    <template id="case-study-discord-moderation-bot">
+      <article class="case-study-article">
+        <p class="case-study-lead">NoSpamPls is a configurable Discord bot designed to streamline moderation and
+          automate routine server tasks.</p>
+
+        <section class="case-study-block" aria-label="Overview">
+          <h4>Discord Moderation and Automation Bot</h4>
+          <p>NoSpamPls combines moderation safeguards, structured suggestion workflows, and scheduled announcements
+            within a modular, feature-toggled architecture.</p>
+          <p>The system is built with scalability and maintainability in mind, using domain-based folder separation and
+            persistent JSON storage.</p>
+        </section>
+
+        <section class="case-study-block" aria-label="Core purpose">
+          <h4>Core Purpose</h4>
+          <ul class="case-study-list">
+            <li>Provide automated moderation tools to reduce manual workload.</li>
+            <li>Enable structured community feedback through an approval workflow.</li>
+            <li>Deliver scheduled announcements and reminders.</li>
+            <li>Allow configuration-driven branding and behavior.</li>
+            <li>Maintain clean architectural separation between features.</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="Slash command features">
+          <h4>Slash Command Features</h4>
+          <p><strong>/suggest</strong></p>
+          <ul class="case-study-list">
+            <li>Allows members to submit structured suggestions.</li>
+            <li>Posts a formatted embed to the configured suggestions channel.</li>
+            <li>Includes interactive Approve and Reject buttons.</li>
+            <li>Restricts moderation actions to users with Manage Messages permission.</li>
+            <li>Updates suggestion status dynamically.</li>
+            <li>Disables buttons after review.</li>
+          </ul>
+
+          <p><strong>/schedulemessage</strong></p>
+          <ul class="case-study-list">
+            <li>Creates recurring automated announcements.</li>
+            <li>Supports predefined intervals: 1 minute, 10 minutes, 30 minutes, hourly, daily.</li>
+            <li>Allows duration-based expiry, such as 2 hours or 3 days.</li>
+            <li>Targets a selected channel.</li>
+            <li>Sends formatted embedded messages.</li>
+          </ul>
+
+          <p><strong>/listschedules</strong></p>
+          <ul class="case-study-list">
+            <li>Displays active scheduled messages with unique schedule ID, target channel, interval, and expiry time.</li>
+          </ul>
+
+          <p><strong>/stopschedule</strong></p>
+          <ul class="case-study-list">
+            <li>Stops and removes an active scheduled message using its ID.</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="Suggestion system">
+          <h4>Suggestion System</h4>
+          <ul class="case-study-list">
+            <li>Stores data in <code>suggestions.json</code>.</li>
+            <li>Tracks status as pending, approved, or rejected.</li>
+            <li>Button interactions update both the embed and stored data.</li>
+            <li>Prevents duplicate or post-approval interaction.</li>
+            <li>Designed for structured, moderator-controlled feedback handling.</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="Scheduled message system">
+          <h4>Scheduled Message System</h4>
+          <ul class="case-study-list">
+            <li>Stores recurring tasks in <code>schedules.json</code>.</li>
+            <li>Automatically restores valid schedules on bot restart.</li>
+            <li>Automatically removes expired schedules.</li>
+            <li>Designed for event reminders, server announcements, and rotating informational messages.</li>
+          </ul>
+        </section>
+
+        <section class="case-study-block" aria-label="Moderation system">
+          <h4>Moderation System</h4>
+          <p><strong>Reply and forward detection</strong></p>
+          <ul class="case-study-list">
+            <li>Detects reply-style messages (<code>message.reference</code>) when moderation is enabled.</li>
+            <li>Automatically deletes the message.</li>
+            <li>Sends a generic warning DM to the user.</li>
+            <li>Falls back to channel mention if DM fails.</li>
+          </ul>
+          <p><strong>Message logging</strong></p>
+          <ul class="case-study-list">
+            <li>Logs deleted messages with content, author, and channel details.</li>
+            <li>Logs edited messages with before and after content.</li>
+            <li>Designed to improve transparency and accountability within server moderation.</li>
           </ul>
         </section>
       </article>
