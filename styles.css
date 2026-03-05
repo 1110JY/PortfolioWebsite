@@ -1,4 +1,4 @@
-﻿/* Josh Yeung â€” Portfolio Styles */
+/* Josh Yeung — Portfolio Styles */
 
 :root {
   --color-accent: #0f0f0f; /* Monochrome accent */
@@ -923,8 +923,9 @@ a { color: inherit; text-decoration: none; }
 .project-featured-media {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.14);
+  border: 0;
   background: #080808;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
   min-height: clamp(300px, 36vw, 460px);
   display: block;
 }
@@ -1399,7 +1400,7 @@ body.project-dialog-open {
 }
 
 .experience-points li::before { 
-  content: "—"; 
+  content: "�"; 
   position: absolute; 
   left: 0; 
   color: var(--color-text); 
@@ -1981,4 +1982,5 @@ input::placeholder, textarea::placeholder {
     overflow-x: hidden;
   }
 }
+
 
