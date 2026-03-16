@@ -1400,7 +1400,7 @@ body.project-dialog-open {
 }
 
 .experience-points li::before { 
-  content: "—"; 
+  content: "ï¿½"; 
   position: absolute; 
   left: 0; 
   color: var(--color-text); 
